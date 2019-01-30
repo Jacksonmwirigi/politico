@@ -10,21 +10,25 @@ body {
 /* styling header */
 .header {
   background-color: #f1f1f1;
-  padding: 20px;
+	padding: 20px;
+	width: auto;
   text-align: center;
 }
 
 /* Styling top navigation bar */
 .topnav {
-  overflow: hidden;
+	overflow: hidden;
+	position: relative;
   background-color: #333;
 }
 
 /* Style the topnav links */
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
+	
+	display: block;
+	position: relative;
+	float: left;
+	color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -43,7 +47,7 @@ body {
   padding: 15px;
 }
 
-/* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
@@ -65,7 +69,7 @@ body {
 }
 #main_content{
 	/**  style for content container */
-	position: absolute;
+	position: relative;
 	top: 0px;
 	width: 450px;	
 	padding: 18px 6% 60px 6%;
