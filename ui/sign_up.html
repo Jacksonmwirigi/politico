@@ -9,6 +9,14 @@
 
 <body>
 
+        <div class="header">
+                <h1>Politico</h1>
+        </div>
+              <div class="topnav">
+                <a href="#">Home</a>
+                <a href="#">Political Offices</a>
+                <a href="#">Candidates</a>
+              </div>
 <div id="main_container" >
    <div id="wrapper">
         <div id="main_content" class="animate form">
@@ -22,14 +30,13 @@
                         <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
                         <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="my username" />
                     </p>
+
+                  
                     <p> 
                         <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
                         <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="example@mail.com"/> 
                     </p>
-                       <p> 
-                        <label for="emailsignup" class="youmail" data-icon="e" > Your County </label>
-                        <input id="emailsignup" name="emailsignup" required="required" type="select" /> 
-                    </p>
+   
                     <p> 
                         <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
                         <input id="passwordsignup" name="passwordsignup" required="required" type="password"/>
@@ -38,17 +45,34 @@
                         <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
                         <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password"/>
                     </p>
+
+                    <fieldset>
+                        <legend>Choose Account Type</legend>
+                                               
+                                <label for="">Voter </label>
+                               <input type="checkbox" name="account_type" id="account_type" value="Voter" /> 
+                               <label for="">Politician </label>
+                               <input type="checkbox"  name="account_type" id="account_type" value="Voter" /> 
+                        
+                    </fieldset>
+
                     <p class="signin button"> 
                         <input type="submit" value="Sign up"/> 
                     </p>
                     <p class="change_link">  
                         Already a member ?
-                        <a href="sign-in.html" > Go to sign in </a>
+                        <a href="signIn.html" > Go to sign in </a>
                     </p>
                 </form>
             </div>
         </div>
+      
     </div>
+    <div class="topnav">
+            <a href="#"></a>
+           
+     </div>
+   
 
 </body>
 </html>
