@@ -1,71 +1,65 @@
 <!doctype html>
 <html>
-<head>     
-    <meta charset="UTF-8">    
-    <link rel="stylesheet" href="style.css">
-<title>registering </title>
+
+<head>
+
+    <title>Admin dashboard </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-</head>
-<body>
-    <div class="admin">
-            <div class="header">
-                    <h1>Politico</h1>
-                    <div class="topnav">
-                            <a href="#">Home</a>
-                            <a href="#">Politicians</a>
-                            <a href="#">Political Offices</a>
-                            <button >LogOut</button>
-                        </div>
-                </div>           
-              
-            <div class="row" >
-              <div class="column">
-                <div class="sidenav">  
-                        <h2  style="background-color:deeppink">Select action</h2>                  
-                        <a href="#createoffice">Create new office</a>
-                        <a href="#offices">View Offices</a>
-                        <a href="#pending">pending Action </a> 
-                        <a href="#candidates">View Candidates</a>
-                        <a href="#voters">View Voters</a>
-                        <a href="#nominees">View Nominees</a>      
-                    </div>
-                    </div>
-                    <div class="column">
-              
-                        <div id="" >
-                
-                            <h2>Party Information </h2>
-         
-              </div>
-              </div>
+
+    <div class="header">
+        <h1>Politico</h1>
+        <div class="topnav">
+            <a href="#">Home</a>
+            <a href="#">Politicians</a>
+            <a href="#">Political Offices</a>
+            <button id="">LogOut</button>
+        </div>
+    </div>
+
+    <div id="row">
+
+        <div id="after">
+            <h2>Select action</h2>
+            <div class="sidenav">
+                <a href="#createoffice">Create new office</a>
+                <a href="#offices"> Create New Party</a>
+                <a href="#pending"> Create new office</a>
+                <a href="#pending"> View offices</a>
+                <a href="#candidates">View Candidates</a>
+                <a href="#voters">View Voters</a>
+
             </div>
-              <footer id="footer">
-                    <div class="row">
-                        <div class="column" style="color:darkgreen">
-                                <h2>Create a Political Party</h2>
-                               
-                                <input class="in_action" type="button" name="create_party" value="Create  party" style="color:darkgreen ;border-radius: 1px;"/>
-                              </div>
-                              <div class="column" style="color:cornflowerblue">
-                                    <h2>Edit a political party</h2>
-                                  
-                                    <input  class="in_action" type="button" name="edit_party" value="Edit a party" style="color:cornflowerblue; border-radius: 1px;"/>
-                                  </div>
-                                  <div class="column" style="color:brown">
-                                        <h2>Delete a Party</h2>
-                
-                                        <input  class="in_action" type="button" name="delete_party" value="Delete party" style="color:brown; border-radius: 1px;"  />                                                    
-                                    </div>         
-                                </div>
-            
-                            </footer>
-            
-                        </div>  
-                        <div class="topnav">
-                            <h1 class="">admin panel</h1>
 
-                        </div>
+        </div>
+    </div>
 
-</body>     
+
+    <footer id="footer">
+        <div id="row">
+
+
+            <div class="column">
+                <h2>Delete a Party</h2>
+
+                <input id="btn" type="button" name="delete_party" value="Delete party" />
+            </div>
+
+
+            <div class="column">
+                <h2>Edit a political party</h2>
+
+                <input id="btn" type="button" name="edit_party" value="Edit a party" />
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
 </html>
