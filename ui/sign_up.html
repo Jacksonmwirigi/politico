@@ -2,7 +2,7 @@
 <html>
 <head>
           <meta charset="UTF-8">
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="css/style.css">
 <title>registering </title>
 
 </head>
@@ -11,17 +11,19 @@
 
         <div class="header">
                 <h1>Politico</h1>
-        </div>
+        
               <div class="topnav">
                 <a href="#">Home</a>
                 <a href="#">Political Offices</a>
                 <a href="#">Candidates</a>
               </div>
+            </div>
 <div id="main_container" >
    <div id="wrapper">
-        <div id="main_content" class="animate form">
-                <form  action="mysuperscript.php" autocomplete="on"> 
-                    <h1> Create a new account</h1> 
+        <div id="main_content" name="form1">
+                <form  action="" > 
+                    <p>Create a new Account</p>
+                 
                      <p> 
                         <label for="name" class="name" data-icon="n"> Your name</label>
                         <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="my name" />
@@ -56,11 +58,14 @@
                         
                     </fieldset>
 
-                    <p class="signin button"> 
-                        <input type="submit" value="Sign up"/> 
+                    <p id="btn"> 
+                        
+                        <input id="btn"  type="submit" value="Sign up"  /> 
+                      
                     </p>
+                   
                     <p class="change_link">  
-                        Already a member ?
+                        Existing account ?
                         <a href="signIn.html" > Go to sign in </a>
                     </p>
                 </form>
