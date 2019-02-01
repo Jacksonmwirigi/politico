@@ -120,7 +120,6 @@ body {
 	margin: 0 0 35px 0;
 	border-radius: 5px;
 }
-<<<<<<< HEAD
 #content{
 
 	top: 0px;
@@ -130,8 +129,6 @@ body {
 	border-radius: 5px
 }
 
-=======
->>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 
 #btn {
 
@@ -159,21 +156,12 @@ font-size: 14pt;
 	margin-top:10px;
 }
 
-
-
 input:-moz-placeholder,
 textarea:-moz-placeholder{ 
 
 	font-style: italic;
 } 
-
-
-
-<<<<<<< HEAD
 #wrapper input:not([type="checkbox"] ){
-=======
-#wrapper input:not([type="checkbox"]){
->>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 	width: 92%;
 	margin-top: 4px;
 	padding: 10px 5px 10px 32px;	
@@ -187,17 +175,11 @@ textarea:-moz-placeholder{
 
 
 } 
-
-
-
 #fieldS_Set1 {
 	width: auto;
 	position: relative;
 	float:left;
-<<<<<<< HEAD
 	
-=======
->>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 	margin-left: 20px;	
 	margin: auto;
 	
@@ -254,7 +236,6 @@ a {
 	border-radius: 10px;
 	height: 120px;
 }
-<<<<<<< HEAD
 
 #footer1{
 	color: #000;
@@ -263,8 +244,6 @@ a {
 	height: auto;
 	background: #bcc0bd;
 }
-=======
->>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 #sidemenu{
 	position: fixed;
 	width: 160px;
