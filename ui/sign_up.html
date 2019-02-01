@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>registering </title>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Politico</h1>
+
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="view_parties.html">Political Offices</a>
+            <a href="show_candidates.html">Candidates</a>
+        </div>
+    </div>
+    <div id="main_container">
+        <div id="wrapper">
+            <div id="main_content">
+                <form action="" name="form1">
+                    <p>Create a new Account</p>
+
+                    <p>
+                        <label> Your name</label>
+                        <input name="name" required="required" type="text" placeholder="my name" />
+                    </p>
+                    <p>
+                        <label for="username">Your username</label>
+                        <input id="username" name="username" required="required" type="text" placeholder="my username" />
+                    </p>
+
+
+                    <p>
+                        <label for="email" class="youmail"> Your email</label>
+                        <input name="email" required="required" type="email" placeholder="example@mail.com" />
+                    </p>
+
+                    <p>
+                        <label for="password">Your password </label>
+                        <input name="password" required="required" type="password" />
+                    </p>
+                    <p>
+                        <label for="password_confirm">Please confirm your password </label>
+                        <input name="password_confirm" required="required" type="password" />
+                    </p>
+
+                    <fieldset>
+                        <legend>Choose Account Type</legend>
+
+                        <label for="">Voter </label>
+                        <input type="checkbox" name="account_type" id="account_type" value="Voter" />
+                        <label for="">Politician </label>
+                        <input type="checkbox" name="account_type" id="account_type" value="Voter" />
+
+                    </fieldset>
+
+                    <p id="btn">
+
+                        <input id="btn" type="submit" value="Sign up" />
+
+                    </p>
+
+                    <p>
+                        Existing account ?
+                        <a href="signIn.html"> Go to sign in </a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="topnav">
+        <a href="#"></a>
+
+    </div>
+
+
+</body>
+
+</html>
