@@ -1,7 +1,10 @@
 
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
 }
+=======
+>>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 
 body {
   margin: 0;
@@ -120,6 +123,7 @@ body {
 	margin: 0 0 35px 0;
 	border-radius: 5px;
 }
+<<<<<<< HEAD
 #content{
 
 	top: 0px;
@@ -129,6 +133,8 @@ body {
 	border-radius: 5px
 }
 
+=======
+>>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 
 #btn {
 
@@ -166,7 +172,11 @@ textarea:-moz-placeholder{
 
 
 
+<<<<<<< HEAD
 #wrapper input:not([type="checkbox"] ){
+=======
+#wrapper input:not([type="checkbox"]){
+>>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 	width: 92%;
 	margin-top: 4px;
 	padding: 10px 5px 10px 32px;	
@@ -187,7 +197,10 @@ textarea:-moz-placeholder{
 	width: auto;
 	position: relative;
 	float:left;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 	margin-left: 20px;	
 	margin: auto;
 	
@@ -244,6 +257,7 @@ a {
 	border-radius: 10px;
 	height: 120px;
 }
+<<<<<<< HEAD
 
 #footer1{
 	color: #000;
@@ -252,6 +266,8 @@ a {
 	height: auto;
 	background: #bcc0bd;
 }
+=======
+>>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 #sidemenu{
 	position: fixed;
 	width: 160px;
@@ -273,6 +289,7 @@ a {
 }
 #form{
 	margin-left: 0px;
+<<<<<<< HEAD
 	text-align: center;
 
 }
@@ -323,4 +340,7 @@ article {
     width: 100%;
     height: auto;
   }
+=======
+
+>>>>>>> c196ddcd5537a80ac99236fd7fa262639ceb76dc
 }

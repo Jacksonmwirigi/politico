@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/voting.css">
+            <script type="type/javascript" src="js/voting.js"></script>
+            <title>voting process  </title>
+    </head>
+    <body>
+            <div class="header ">
+                    <h1>Politico</h1>               
+                <div class="topnav">
+                  <a href="index.html">Home</a>
+                  <a href="#">Political Offices</a>
+                  <a href="show_candidates.html">Candidates</a>
+                </div>
+            </div>
+            
+
+
+            <div id="main_container" >
+
+                    <div id="wrapper">
+                        <div id="main_content" class="">
+                            <form class="tab_form" action="" > 
+                                <div class="tabview">
+                                        <h2>  <label for="Presidential"  > Presidential Candidates </label>
+                                        </h2>
+                                           
+                                            <p> 
+                                            <input  name="Presidential" required="required" type="text" placeholder=" "/>
+                                        </p>
+                                      
+                                </div>
+                                <div class="tabview">
+                                        <h2>  <label for="gubernatorial_candidate" > Gubernatorial Candidate </label>
+                                        </h2>
+                                           
+                                            <p> 
+                                            <input  name="gubernatorial_candidate" required="required" type="text" placeholder=" "/>
+                                        </p>
+                                      
+                                </div>
+                                <div class="tabview">
+                                        <h2>  <label for="senitorial" > Senitorial Candidate </label>
+                                        </h2>
+                                           
+                                            <p> 
+                                            <input  name="senitorial" required="required" type="text" placeholder=" "/>
+                                        </p>
+                                    </div>
+                                    <div class="tabview">
+                                            <h2>  <label for="mp"  > MP Candidate </label>
+                                            </h2>
+                                               
+                                                <p> 
+                                                <input  name="mp" required="required" type="text" placeholder=" "/>
+                                            </p>
+                                        </div>
+                                        <div class="tabview">
+                                                <h2>  <label for="mca"  >Member of County Assembly </label>
+                                                </h2>
+                                                   
+                                                    <p> 
+                                                    <input  name="mca" required="required" type="text" placeholder=" "/>
+                                                </p>
+                                            </div>
+                                         
+        
+                            </form>
+                                <div style="overflow: auto"> 
+                                <button type="button" id="prevBtn" 
+                                onclick="nextPrev(-1)">Previous</button>
+                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    
+                             </div>
+                        </div>
+                    
+                    </div>
+                
+                </div> 
+    </body>
+</html>
+
