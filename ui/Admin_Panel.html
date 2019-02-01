@@ -5,61 +5,126 @@
 
     <title>Admin dashboard </title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+<div class="header">
+    <h1>Politico</h1>
+    <div class="topnav">
+        <a href="#">Home</a>
+        <a href="#voters">View Offices</a>
+        <a href="show_candidates.html">Politicians</a>
+        <a href="#">Political Offices</a>
+
+        <button id="">LogOut</button>
+    </div>
+</div>
 
 <body>
+    <section>
 
-    <div class="header">
-        <h1>Politico</h1>
-        <div class="topnav">
-            <a href="#">Home</a>
-            <a href="#">Politicians</a>
-            <a href="#">Political Offices</a>
-            <button id="">LogOut</button>
-        </div>
-    </div>
-
-    <div id="row">
-
-        <div id="after">
-            <h2>Select action</h2>
-            <div class="sidenav">
-                <a href="#createoffice">Create new office</a>
-                <a href="#offices"> Create New Party</a>
-                <a href="#pending"> Create new office</a>
-                <a href="#pending"> View offices</a>
-                <a href="#candidates">View Candidates</a>
-                <a href="#voters">View Voters</a>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <footer id="footer">
-        <div id="row">
-
-
-            <div class="column">
-                <h2>Delete a Party</h2>
-
-                <input id="btn" type="button" name="delete_party" value="Delete party" />
-            </div>
-
-
-            <div class="column">
-                <h2>Edit a political party</h2>
-
-                <input id="btn" type="button" name="edit_party" value="Edit a party" />
-
-            </div>
-
+        <div class="admin_nav">
+            <a href="#createoffice">Create new office</a>
+            <a href="#offices"> Create New Party</a>
+            <a href="#pending"> Create new office</a>
+            <a href="#pending"> View Voters</a>
+            <a href="#candidates">View Candidates</a>
+           
+            
         </div>
 
-    </footer>
+        <article>
+            <fieldset>
+            <form id="party_form" method="POST" action="">
+                <table border="0" cellpadding="8">
+                    <tr>
+                        <th > <b>Registration Number</th>
+                        <th > <b>Party Name</th>
+                        <th> <b>Party Leader</th>
+                        <th > <b>Party Slogan</b></th>
+                        <th><b>HeadeQuaters</b></th>
+                        <th><b>Member size</b></th>
+                        <th><b> Registration Date</th>
+                        <th><b>Party Website</b></th>
+                        <th><b>Action</b></th>
+                    </tr>
+                    <tr>
+                        <td>AK1000</td>
+                        <td>JUBILEE</td>
+                        <td>A leader</td>
+                        <td>To serve citizens is our job</td>
+                        <td>Kisumu</td>
+                        <td> 1000</td>
+                        <td>12/02/2018</td>
+                        <td>www.dummy.test</td>
+                        <td><input type="checkbox"></td>
 
+
+                    </tr>
+                    <tr>
+                        <td>AK00</td>
+                        <td>NASA</td>
+                        <td>John K</td>
+                        <td>To serve citizens is our job</td>
+                        <td>Nairobi</td>
+                        <td> 1000</td>
+                        <td>12/02/2017</td>
+                        <td>www.dummy.test</td>
+                        <td><input type="checkbox" ></td>
+                    </tr>
+                    <tr>
+                        <td>AK100</td>
+                        <td>Chap Chap</td>
+                        <td>Johnstone M</td>
+                        <td>we represent you job</td>
+                        <td>Westlands</td>
+                        <td> 1000</td>
+                        <td>12/02/2018</td>
+                        <td>www.dummy.test</td>
+                        <td><input type="checkbox"></td>
+
+
+                    </tr>
+                    <tr>
+                        <td>AK20</td>
+                        <td>NARC</td>
+                        <td>John K</td>
+                        <td>just for you</td>
+                        <td>Kariobangi</td>
+                        <td> 16000</td>
+                        <td>01/02/2016</td>
+                        <td>www.dummy.test</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </table>
+            </FORM>
+        </fieldset>
+        </article>
+        <footer id="footer">
+            <div id="row">
+                <div class="column">
+                    <h2>Delete a Party</h2>
+
+                    <input id="btn" type="button" name="delete_party" value="Delete party" />
+                </div>
+
+
+                <div class="column">
+                    <h2>Edit a political party</h2>
+
+                    <input id="btn" type="button" name="edit_party" value="Edit a party" />
+
+                </div>
+
+            </div>
+        </footer>
+    
+    </section>
+    <div class="footer_1">
+            <h3>see  our page</h3>
+        </div>
+  
 </body>
 
 </html>
