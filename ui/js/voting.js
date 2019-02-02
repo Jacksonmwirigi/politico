@@ -35,7 +35,7 @@ function nextPrev(n) {
         document.getElementById("tab_form").submit();
         return false;
     }
-    // Otherwise, display the correct tab:
+   
     showTab(currentTab);
 }
 
@@ -63,7 +63,7 @@ function validateForm() {
 }
 
 function fixStepIndicator(n) {
-    // This function removes the "active" class of all steps...
+    
     var i, x = document.getElementsByClassName("steps");
     for (i = 0; i < x.length; i++) {
         x[i].className = x[i].className.replace("active", "");
