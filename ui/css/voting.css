@@ -1,0 +1,58 @@
+
+button{
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    border-radius: 20px;
+    width: 100px;
+}
+.tabview{
+    display: none;
+}
+input.invalid {
+    background-color: #ffdddd;
+  }
+
+  /* .steps {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  } */
+  .steps {
+
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+
+  }
+  /* sets step to active state and color changes */
+  .steps active {
+    opacity: 1;
+  }
+  /* marks end of steps ---inactive state */
+  .steps finish {
+    background-color: #4CAF50;
+  }
+
+  #floating_btn{
+      overflow: auto;
+      /* float: right; */
+     
+      
+  }
+  /* #floating_btn  nPrv_btn{
+     
+  } */
+
+
+
+

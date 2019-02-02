@@ -1,0 +1,18 @@
+main{
+ 
+    width: 60%;
+    padding-top: 30px;
+    margin-top: 0px;
+    text-align: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    height: 400px;
+
+    border-radius: 10px;
+}
+main h1{
+    color: black;
+    font-size: 24pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
