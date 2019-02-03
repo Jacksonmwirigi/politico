@@ -1,11 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <title>creating political party</title>
 
+    <title>creating party </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 
 </head>
 
@@ -14,20 +20,33 @@
         <h1>Politico</h1>
         <div class="topnav">
             <a href="index.html">Home</a>
+            <a href="express_interest.html">Express Interest</a>
             <a href="show_candidates.html">Politicians</a>
             <a href="#">Political Offices</a>
 
             <button id="">LogOut</button>
         </div>
     </div>
-  
-    <div id="main_container">
-        <div id="wrapper">
-            <div id="main_content">
+
+    <div id="dcontainer">
+        <div id="dsidebar">
+            <nav class="dsh_nav">
+                <a href="#createoffice">Create new office</a>
+                <a href="create_party.html"> Create New Party</a>
+                <a href="Admin_Panel.html">Edit/Delete a Party </a>
+                <a href="#pending"> Create new office</a>
+                <a href="show_candidates.html"> View Parties</a>
+                <a href="show_candidates.html">View Candidates</a>
+            </nav>
+        </div>
+        <div id="dcontent">
+                <fieldset>
+            <div  id="wrapper">
+                  
                 <form method="POST" action="">
                     <TABLE id="form" BORDER="0">
-                        <TR>
-                            <td><b> <label for="party_name" class="" data-icon="n"> Party name:</label></td>
+                       <TR>
+                            <td><b> <label for="party_name" > Party name:</label></td>
                             <td>
                                 <input id="party_name" name="party_name" required="required" type="text" placeholder="" />
                             </td>
@@ -35,7 +54,7 @@
 
                         <TR>
 
-                            <td><b> <label for="slogan" class="slogan" data-icon="u">Party Slogan</label></td>
+                            <td><b> <label for="slogan" >Party Slogan</label></td>
                             <td> <input id="slogan" name="slogan" required="required" type="text" placeholder="" /></td>
 
                         </TR>
@@ -49,23 +68,22 @@
 
                         <TR>
 
-                            <td><b> <label for="memeber_total" class="memeber_total">Total Members</label></td>
+                            <td><b> <label for="memeber_total" >Total Members</label></td>
                             <td> <input id="" name="memeber_total" required="required" type="number" placeholder="" /></td>
 
                         </TR>
                         <TR>
 
-                            <td> <label for="party_Hq" > <b>Party HeadQuaters</label></td>
-                            <td> <input id="" name="party_Hq" required="required" type="text" placeholder="" />
+                            <td> <label for="leader" > <b>Party Leader</label></td>
+                            <td> <input id="" name="party_leader" required="required" type="text" placeholder="" />
                             </td>
 
                         </TR>
                      
                         <TR>
 
-                            <td> <label for="doR" > <b>Date of Registration</label></td>
-                            <td> <input id="" name="doR" required="required" type="date" placeholder="" />
-                            </td>
+                            <td><b> <label for="slogan" >Party Slogan</label></td>
+                            <td> <input id="slogan" name="slogan" required="required" type="text" placeholder="" /></td>
 
                         </TR> 
                         <TR>
@@ -92,14 +110,20 @@
 
                     </TABLE>
                 </FORM>
-            </div>
-        </div>
-    </div>
-    <footer id="footer1">
-        <h2>Your trusted online voting</h2>
-        <p>politico app coming soon  </p>
-    </footer>
+             
 
+            </div>
+        </fieldset>
+
+
+        </div>
+
+    </div>
+    <footer class="footer_1">
+
+        <h3>Politico The Trusted Online Voting platform </h3>
+
+    </footer>
 
 </body>
 
