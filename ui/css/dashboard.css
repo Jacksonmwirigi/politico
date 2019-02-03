@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    
+    height: 100%;
+}
+
+#dcontainer {
+	display: table;
+    width: auto;
+    margin: 20px;
+	height: 100%;
+}
+
+#dsidebar {
+	display: table-cell;
+    width: 15%;
+	vertical-align: top;
+}
+
+#dcontent {
+	display: table-cell;
+    width: auto;
+    margin-left: 20px;
+    padding-left: 60px;
+	vertical-align: top;
+}
+
+.dsh_nav{
+    width: 160px;
+    margin: (2px,10px,1px,10px);
+    float: left;
+    background-color: #333;
+    height: auto;
+ 
+}
+.dsh_nav a {
+  padding: 6px 0px 6px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #fff;
+  display: block;
+}
+
+.dsh_nav a:hover {
+    color: black;
+    background-color: brown;
+}
