@@ -1,3 +1,5 @@
+
+"""Initializing an empty list to hold our data"""
 party_list = []
 
 
@@ -14,22 +16,24 @@ class Party():
         }
         self.party.append(party)
         return party
-    def get_all (self):
-        return self.party  
-  
-    def get_party_by_id(self,party_id):
+
+    def get_all(self):
+        return self.party
+
+    def get_party_by_id(self, party_id):
         if self.party:
             for party in self.party:
-                if party.get('party_id') == party_id:      
+                if party.get('party_id') == party_id:
                     return party
-   def edit_party():
-       if party in self.party in :
-           if party.get('party_id')==party_id:
-               new_party=update(self.party)
-               self.party_list.update(party)
-               return new_party
-            
 
-        
+    def edit_party(self):
+        for party in party_list:
+            if party:
+                party.update['party_id']
+            return party
 
-
+    def delete_party(self, party_id):
+        for party in party_list:
+            if party in self.party:
+                party_list.remove(party_id)
+            return self.party
