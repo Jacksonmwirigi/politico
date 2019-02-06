@@ -38,16 +38,5 @@ class Parties:
             'parties': parties
         }))
 
-    @pt_v1.route('/parties/<int:party_id>', methods=['GET'])
-    def get_by_id( party_id):
-        party = Party().get_party_by_id(party_id)
-        if party:
-            return make_response(jsonify({
-                'msg': 'success',
-                'parties': party
-            }))
-        return make_response(jsonify({
-            'msg': 'NOt found'
-        }))    
 
 
