@@ -7,7 +7,7 @@ pt_v1 = Blueprint('v1', __name__, url_prefix='/api/v1/')
 class OfficeView:
     def __init__(self):
 
-
+        
     @pt_v1.route('/offices',methods = ['POST'])
     def create_office(self):
         data = request.get_json()
@@ -32,5 +32,19 @@ class OfficeView:
             }))
         return make_response(jsonify({
             'msg': 'NOt found'
-        }))    
+        }))   
 
+         """This is the route for retrieving all political parties."""
+
+    @pt_v1.route('/parties', methods=['GET'])
+    def get_all_parties():
+        parties = Party().get_all()
+        if parties:
+            return make_response(jsonify({
+                'msg': 'success',
+                'parties': parties
+            }))
+        return make_response(jsonify({
+            'msg': 'success',
+            'parties': parties
+        }))    

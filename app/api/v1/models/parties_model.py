@@ -20,25 +20,15 @@ class Party:
         self.party.append(party)
         return party
 
-    def edit_party(self, party_id, data):
-        for party in party_list:
-            if party('party_id') == party_id:
+    """get_all retrieves all the registered parties from , in this case, my party_list"""
 
-                name = data.get("name")
-                hqAddress = data.get("hqAddress") 
-                logoUrl=data.get("logUrl")
-            if name:
-                party["name"] = name
-            if hqAddress:
-                party["hqAddress"] = hqAddress
-            if logoUrl:  
-                party["logoUrl"] = logoUrl           
+    def get_all(self):
+        return self.party
 
-            return party    
-    
-    def delete_party(self, party_id):
-        for party in party_list:
-            if party in self.party:
-                party_list.remove(party)        
+    def get_party_by_id(self, party_id):
+        if self.party:
+            for party in self.party:
+                if party.get('party_id') == party_id:
 
+                    return party
 
