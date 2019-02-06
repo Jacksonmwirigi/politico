@@ -25,3 +25,10 @@ class OfficeModel:
 
         offices.append(office)
         return office
+
+    def get_office_by_id(self, name):
+        if self.office:
+            for office in self.office:
+                if office.get('name') == name:
+
+                    return office    
