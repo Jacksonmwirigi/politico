@@ -18,7 +18,6 @@ class Parties:
         hqAddress = data['hqAddress']
         logoUrl = data['logoUrl']
         Party().create_party(name, hqAddress, logoUrl)
-        #new_party = Party().create_party(name, hqAddress, logoUrl)
         return make_response(jsonify({
             "msg": "Success"
         }), 201)
