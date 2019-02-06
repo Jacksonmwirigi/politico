@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 """Initializing an empty list to hold our data"""
 party_list = []
@@ -31,5 +30,3 @@ class Party:
                 if party.get('party_id') == party_id:
 
                     return party
-=======
->>>>>>> develop
