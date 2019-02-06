@@ -20,3 +20,17 @@ class OfficeView:
             "msg":"Success"
         }),201)
 
+        """This is the route allows user to retrieve one specific government opffice by specifying the office id"""
+
+    @pt_v1.route('/offices/<int:office_id>', methods=['GET'])
+    def get_by_id( office_id):
+        office = OfficeModel().get_party_by_id(office_id)
+        if party:
+            return make_response(jsonify({
+                'msg': 'success',
+                'office': office
+            }))
+        return make_response(jsonify({
+            'msg': 'NOt found'
+        }))    
+
