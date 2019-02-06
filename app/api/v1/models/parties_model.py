@@ -32,3 +32,24 @@ class Party:
 
                     return party
 
+    """defines arguments for edit party route/ end point"""
+    def edit_party(self, party_id, data):
+        for party in party_list:
+            if party('party_id') == party_id:
+
+                name = data.get("name")
+                hqAddress = data.get("hqAddress")
+                logoUrl = data.get("logUrl")
+            if name:
+                party["name"] = name
+            if hqAddress:
+                party["hqAddress"] = hqAddress
+            if logoUrl:
+                party["logoUrl"] = logoUrl
+
+            return party
+
+    def delete_party(self, party_id):
+        for party in party_list:
+            if party in self.party:
+                party_list.remove(party)
