@@ -8,7 +8,7 @@ class Party:
         """Initializing class instance variables"""
         self.party = party_list
 
-    """This function creates a new  party object  """
+    """This function creates a new political party   """
 
     def create_party(self, name, hqAddress, logoUrl):
         party = {
@@ -20,18 +20,4 @@ class Party:
         self.party.append(party)
         return party
 
-   """This is the route allows user to retrieve one political party with specific party id"""
 
-    @pt_v1.route('/parties/<int:party_id>', methods=['GET'])
-    def get_by_id( party_id):
-
-        party = Party().get_party_by_id(party_id)
-        if party:
-
-            return make_response(jsonify({
-            'msg': 'success',
-            'parties': party
-            }))
-        return make_response(jsonify({
-        'msg': 'NOt found'
-        }))
