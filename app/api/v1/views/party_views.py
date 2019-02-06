@@ -34,6 +34,16 @@ class Parties:
             'message':'update successful'
             'parties' :data
             }),200) 
+
+    @pt_v1.route('/parties<party_id>', methods=['DELETE'])
+    def delete_a_party(party_id):
+        party = Party().delete_party(party_id)
+        return make_response(jsonify({
+            'status' : 'OK',
+            'message': 'successfully deleted'
+        }),200)   
+        
+             
  
 
 

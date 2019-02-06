@@ -35,5 +35,10 @@ class Party:
                 party["logoUrl"] = logoUrl           
 
             return party    
+    
+    def delete_party(self, party_id):
+        for party in party_list:
+            if party in self.party:
+                party_list.remove(party)        
 
 
