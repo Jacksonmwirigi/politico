@@ -1,0 +1,27 @@
+from flask import Flask, json, make_response
+
+"""defining my list as a global variable"""
+offices = []
+
+
+"""This class will handle all the government office operations"""
+
+
+class OfficeModel:
+    def __init__(self, name, candidate_id, date_created):
+        self.office=offices
+        self.name = name
+        self.candidate_id = candidate_id
+        self.date_created = date_created
+
+    def create_office(self):
+        office= [
+        {
+            'office_id': len(self.office)+1,
+            'name': self.name,
+            'candidate_id': self.candidate_id,
+            'date_created': self.date_created
+        }]
+
+        offices.append(office)
+        return office
