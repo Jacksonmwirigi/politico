@@ -14,13 +14,12 @@ class Parties:
 
     """This end point allows uadmin to create a new political party"""
     @pt_v1.route('/parties', methods=['POST'])
-    def create__a_party():
+    def create__a_party(self):
         data = request.get_json()
         name = data['name']
         hqAddress = data['hqAddress']
         logoUrl = data['logoUrl']
         Party().create_party(name, hqAddress, logoUrl)
-        #new_party = Party().create_party(name, hqAddress, logoUrl)
         return make_response(jsonify({
             "msg": "Success"
         }), 201)

@@ -25,8 +25,8 @@ class Party:
         for party in party_list:
             if party('party_id') == party_id:
                 name = data.get("name")
-                hqAddress = data.get("hqAddress") 
-                logoUrl=data.get("logUrl")
+                hqAddress = data.get("hqAddress")
+                logoUrl = data.get("logUrl")
             if name:
                 party["name"] = name
             if hqAddress:
