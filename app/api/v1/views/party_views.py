@@ -33,6 +33,7 @@ class Parties:
         return make_response(jsonify({
             'status' :'OK',
             'message':'update successful'
+            'parties' :data
             }),200) 
  
 
