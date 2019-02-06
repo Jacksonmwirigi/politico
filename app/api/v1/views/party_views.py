@@ -3,7 +3,7 @@ from app.api.v1.models.parties_model import Party
 
 
 """The below file reisters blueprints for the api"""
-pt_v1 = Blueprint('v1', __name__, url_prefix='/api/v1/')
+pt_v1 = Blueprint('v1', __name__, url_prefix='/api/v1')
 
 """this class represents party views"""
 
@@ -14,7 +14,7 @@ class Parties:
 
     """This end point allows uadmin to create a new political party"""
     @pt_v1.route('/parties', methods=['POST'])
-    def create__a_party():
+    def create__a_party(self):
         data = request.get_json()
         name = data['name']
         hqAddress = data['hqAddress']
@@ -27,24 +27,10 @@ class Parties:
     """This end point allow admin to edit a party by creating a PATCH request on postman"""
     @pt_v1.route('/parties<party_id>', methods=['PATCH'])
     def edit_party(self, party_id):
-        Party().edit_party('party_id')
+        Party().edit_party(self,party_id)
         data=request.get_json
         return make_response(jsonify({
             'status' :'OK',
-            'message':'update successful'
-            'parties' :data
+            'message':'update successful',
+            'parties':data
             }),200) 
-
-    @pt_v1.route('/parties<party_id>', methods=['DELETE'])
-    def delete_a_party(party_id):
-        party = Party().delete_party(party_id)
-        return make_response(jsonify({
-            'status' : 'OK',
-            'message': 'successfully deleted'
-        }),200)   
-        
-             
- 
-
-
-
