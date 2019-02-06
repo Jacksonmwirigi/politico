@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, make_response, Blueprint, Response
-from app.api.v1.models.parties_model import Party
+from app.api.v1.models.parties_model import Party 
 
 
 """The below file reisters blueprints for the api"""
@@ -23,6 +23,18 @@ class Parties:
         return make_response(jsonify({
             "msg": "Success"
         }), 201)
+
+    """This end point allow admin to edit a party by creating a PATCH request on postman"""
+    @pt_v1.route('/parties<party_id>', methods=['PATCH'])
+    def edit_party(self, party_id):
+        Party().edit_party('party_id')
+        data=request.get_json
+        return make_response(jsonify({
+            'status' :'OK',
+            'message':'update successful'
+            'parties' :data
+            }),200) 
+ 
 
 
 

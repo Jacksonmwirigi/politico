@@ -20,4 +20,20 @@ class Party:
         self.party.append(party)
         return party
 
+    def edit_party(self, party_id, data):
+        for party in party_list:
+            if party('party_id') == party_id:
+
+                name = data.get("name")
+                hqAddress = data.get("hqAddress") 
+                logoUrl=data.get("logUrl")
+            if name:
+                party["name"] = name
+            if hqAddress:
+                party["hqAddress"] = hqAddress
+            if logoUrl:  
+                party["logoUrl"] = logoUrl           
+
+            return party    
+
 
