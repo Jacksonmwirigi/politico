@@ -20,6 +20,7 @@ class Party:
         self.party.append(party)
         return party
 
+    """the function below defines the arguments required to update an existing poliutical part"""
     def edit_party(self, party_id, data):
         for party in party_list:
             if party('party_id') == party_id:
@@ -35,5 +36,3 @@ class Party:
                 party["logoUrl"] = logoUrl           
 
             return party    
-
-

@@ -3,7 +3,7 @@ from app.api.v1.models.parties_model import Party
 
 
 """The below file reisters blueprints for the api"""
-pt_v1 = Blueprint('v1', __name__, url_prefix='/api/v1/')
+pt_v1 = Blueprint('v1', __name__, url_prefix='/api/v1')
 
 """this class represents party views"""
 
@@ -32,8 +32,8 @@ class Parties:
         data=request.get_json
         return make_response(jsonify({
             'status' :'OK',
-            'message':'update successful'
-            'parties' :data
+            'message':'update successful',
+            'parties':data
             }),200) 
  
 
