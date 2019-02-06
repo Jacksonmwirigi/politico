@@ -28,14 +28,10 @@ class Parties:
     """This end point allow admin to edit a party by creating a PATCH request on postman"""
     @pt_v1.route('/parties<party_id>', methods=['PATCH'])
     def edit_party(self, party_id):
-        Party().edit_party('party_id')
+        Party().edit_party(self,party_id)
         data=request.get_json
         return make_response(jsonify({
             'status' :'OK',
             'message':'update successful',
             'parties':data
             }),200) 
- 
-
-
-
