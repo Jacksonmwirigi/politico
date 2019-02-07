@@ -1,4 +1,8 @@
 
+img {
+    width: 60%;
+    height : 230px;
+}
 body {
 width: auto;
 }
@@ -66,5 +70,16 @@ margin-left: 20px;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 
       'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       color: rgb(6, 1, 10);
-
+  }
+  #h{
+    color:#fff;
+  }
+  #home_footer{
+      background-color: #333;
+      text-align: center;
+      margin-top: 2px;
+      position: relative;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      height: 120px;
   }
