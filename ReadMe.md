@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/Jacksonmwirigi/politico.svg?branch=develop)](https://travis-ci.org/Jacksonmwirigi/politico)
+[![Build Status](https://travis-ci.org/Jacksonmwirigi/politico.svg?branch=develop)](https://travis-ci.org/Jacksonmwirigi/politico) [![Coverage Status](https://coveralls.io/repos/github/Jacksonmwirigi/politico/badge.svg?branch=develop)](https://coveralls.io/github/Jacksonmwirigi/politico?branch=develop)
 
-[![Coverage Status](https://coveralls.io/repos/github/Jacksonmwirigi/politico/badge.svg?branch=develop)](https://coveralls.io/github/Jacksonmwirigi/politico?branch=develop)
+
 
 
 **POLITICO API**
