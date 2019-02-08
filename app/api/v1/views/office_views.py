@@ -32,20 +32,23 @@ class OfficeView:
                 'office': office
             }))
         return make_response(jsonify({
-            'msg': 'NOt found'
+            'msg': 'Not found'
+            'error' : 404
+
         }))
 
         """This is the route for retrieving all political parties."""
 
     @pt_v1.route('/parties', methods=['GET'])
-    def get_all_parties():
-        parties = Party().get_all()
-        if parties:
+    def get_all_offices():
+        office = OfficeModel.get_all()
+        if office:
             return make_response(jsonify({
                 'msg': 'success',
-                'parties': parties
+                'parties': office,
+                'status' : 200
             }))
         return make_response(jsonify({
-            'msg': 'success',
-            'parties': parties
+            'msg': 'Not Found',
+            'error': 404
         }))

@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, make_response, Blueprint, Response
 from app.api.v1.models.parties_model import Party
-from app import validation
+from app.validation import is_valid_string
 
 
 """The below file reisters blueprints for the api"""
@@ -13,18 +13,18 @@ class Parties:
     @pt_v1.route('/parties', methods=['POST'])
     def create__a_party():
         data = request.get_json()
+        if name.is_valid_string:
+            
         name = data['name']
         hqAddress = data['hqAddress']
         logoUrl = data['logoUrl']
-        
-        party = Party().create_party(name, hqAddress, logoUrl)
+        Party().create_party( name, hqAddress, logoUrl)
         return make_response(jsonify({
-            "data": party,
+            "data": data,
             "status": 201,
             "msg": "created Successfully"
 
         }), 201)
-
 
     """This is the route for retrieving all political parties."""
     @pt_v1.route('/parties', methods=['GET'])
@@ -33,8 +33,13 @@ class Parties:
         if parties:
             return make_response(jsonify({
                 'msg': 'success',
+                'status' :200,
                 'parties': parties
-            }))
+            }),200)
+        return make_response(jsonify({
+            'error': 404,
+            'message': 'NOt found'
+            }), 404)    
 
 
     """This is the route allows user to retrieve one political party with specific party id"""
@@ -62,20 +67,23 @@ class Parties:
             'status': 'OK',
             'message': 'update successful',
             'parties': party
-        }), 200)
+            }), 200)
 
 
     """delete party end point"""
-    @pt_v1.route('/parties<party_id>', methods=['DELETE'])
+    @pt_v1.route('/parties/<party_id>', methods=['DELETE'])
     def delete_a_party(party_id):
-        party = Party().delete_party(party_id)
+        """This method checks for an existing party then deletes it """
+        party = Party().if_party_exists(party_id)
         if party:
+            respo =Party().delete_party(party)
+            
             return make_response(jsonify({
                 'status': 200, 
-                'data': "Deleted successfully"
+                'message': "Deleted successfully"
                 }), 200)
-            
-        return make_response(jsonify({
-            'status': 404,
-            'message': 'party does not exist'
-        }), 404)
+        else:    
+            return make_response(jsonify({
+                'status': 404,
+                'message': 'party does not exist'
+            }), 404)
