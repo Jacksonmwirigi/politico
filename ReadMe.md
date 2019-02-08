@@ -3,9 +3,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/Jacksonmwirigi/politico/badge.svg?branch=develop)](https://coveralls.io/github/Jacksonmwirigi/politico?branch=develop)
 
 
-#POLITICO API
+**POLITICO API**
 In this project I am creating  end points that will allow party creation, editing a party, retrieving all the registerd parties and as well as goovernment offices from the politico system. 
-#Below are the end points I have created.
+**Below are the end points I have created.**
 
 |    END POINT    | FUNCTIONALITY  |  HTTP METHOD  | 
 |-----------------|----------------|---------------|
@@ -25,6 +25,7 @@ In this project I am creating  end points that will allow party creation, editin
 **6.** Tesyting Framework -coverage
 
 **Other Requirements**
+
         pip install pytest 
 
         pip install coverage
@@ -37,3 +38,8 @@ In this project I am creating  end points that will allow party creation, editin
 
 **Author**
 Jackson Mwirigi Ithalii
+
+**Contributors**
+Harun Gachanga
+Abraham Ogol
+WIllies Wanjala
