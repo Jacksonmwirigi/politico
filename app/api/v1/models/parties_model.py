@@ -4,20 +4,18 @@ party_list = []
 
 
 class Party:
-    def __init__(self):
-        """Initializing class instance variables"""
+    def __init__(self,name,hqAddress, logoUrl ):
+        """defining class instance variables"""
         self.party = party_list
+        self.party_id =len(party_list)+1
+        self.name= name
+        self.logoUrl = logoUrl
+        self.hqAddress = hqAddress
 
     """This function creates a new political party   """
- 
-    def create_party(self,name,hqAddress, logoUrl ):
-        party = {
-            'party_id': len(self.party)+1,
-            'name': name,
-            'hqAddress': hqAddress,
-            'logoUrl': logoUrl
-        }
-        self.party.append(party)
+    def create_party(self):
+        party = {}
+        party_list.append(party)
         return party
 
     """get_all retrieves all the registered parties from , in this case, my party_list"""
@@ -41,7 +39,9 @@ class Party:
                 party["name"] = name
             return party
 
+    """delete party function"""
     def delete_party(self, party_id):
         for party in party_list:
             if party in self.party:
                 party_list.remove(party)
+                
