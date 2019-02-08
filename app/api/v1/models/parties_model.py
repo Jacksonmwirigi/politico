@@ -19,6 +19,8 @@ class Party:
         party_list.append(party)
         return party
 
+
+
     """get_all retrieves all the registered parties from , in this case, my party_list"""
 
     def get_all(self):
@@ -31,9 +33,10 @@ class Party:
 
                     return party
 
-    """defines arguments for edit party route/ end point"""
+
     def edit_party(self, party_id, data):
         for party in party:
+            """defines arguments for edit party route/ end point"""
             if party('party_id') == party_id:
                 name = data.get("name")
             if name:

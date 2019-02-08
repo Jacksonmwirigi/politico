@@ -1,5 +1,7 @@
 {
-  "tests/test_office_endpoints.py::TestParties::test_create_office": true,
-  "tests/test_office_endpoints.py::TestParties::test_get_all_office": true,
-  "tests/test_office_endpoints.py::TestParties::test_get_specific_office": true
+  "tests/v1/test_office_view.py::TestOffices": true,
+  "tests/v1/test_office_view.py::TestOffices::test_create_party": true,
+  "tests/v1/test_office_view.py::TestOffices::test_get_all_parties": true,
+  "tests/v1/test_office_view.py::TestOffices::test_post": true,
+  "tests/v1/test_view_party.py::TestParties": true
 }

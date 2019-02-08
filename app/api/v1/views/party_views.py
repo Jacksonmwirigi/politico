@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request, make_response, Blueprint, Response
 from app.api.v1.models.parties_model import Party
-from app.validation import is_valid_string
 
 
 """The below file reisters blueprints for the api"""
@@ -13,8 +12,6 @@ class Parties:
     @pt_v1.route('/parties', methods=['POST'])
     def create__a_party():
         data = request.get_json()
-        if name.is_valid_string:
-            
         name = data['name']
         hqAddress = data['hqAddress']
         logoUrl = data['logoUrl']
@@ -42,7 +39,7 @@ class Parties:
             }), 404)    
 
 
-    """This is the route allows user to retrieve one political party with specific party id"""
+    """Retrieve one political party with specific party id"""
     @pt_v1.route('/parties/<int:party_id>', methods=['GET'])
     def get_by_id(party_id):
         party = Party().get_party_by_id(party_id)
@@ -57,10 +54,9 @@ class Parties:
             'message': 'NOt found'
         }), 404)
 
-
-    """This end point allow admin to edit a party by creating a PATCH request on postman"""
     @pt_v1.route('/parties/<int:party_id>/name', methods=['PUT'])
     def edit_party_name(party_id):
+        """ End point for edit party by sending a PUT request on postman"""
         data = request.get_json
         party = Party().edit_party(party_id, data)
         return make_response(jsonify({
