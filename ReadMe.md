@@ -14,6 +14,7 @@ In this project I am creating  end points that will allow party creation, editin
 |   api/v1/parties |  Delete Parties|   DELETE    |
 |   api/v1/office  |  Create office |   POST      |
 |   api/v1/office  |   view offices |   GET       |
+
 **TOOLS TO BE USED IN THE CHALLENGE**
 **1.** Server side Framework- Flask
 **2.** Linting library- Pylint
