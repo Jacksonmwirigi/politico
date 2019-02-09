@@ -33,40 +33,40 @@ class OfficeView():
         return make_response(jsonify({
             'msg': 'NOt found'
         }))
-    @pt_v2.route('/parties', methods=['GET'])
+    @pt_v2.route('/offices', methods=['GET'])
     def get_all_offices(self):
-        """This is the route for retrieving all political parties."""
+        """This is the route for retrieving all government ofices."""
         offices = OfficeModel().get_all()
         if offices:
             return make_response(jsonify({
                 'msg': 'success',
-                'parties': offices
+                'offices': offices
             }))
         return make_response(jsonify({
             'msg': 'success',
-            'parties': offices
+            'offices': offices
         }))
 
        
-    @pt_v2.route('/parties/<int:party_id>/name', methods=['PUT'])
+    @pt_v2.route('/offices/<int:office_id>/name', methods=['PUT'])
     def edit_office(office_id):
-        """ End point for edit party by sending a PUT request on postman"""
+        """ End point for editing office by sending a PUT request on postman"""
         data = request.get_json
-        office = OfficeModel().edit_party(office_id, data)
+        office = OfficeModel().edit_office(office_id, data)
         return make_response(jsonify({
             'status': 'OK',
             'message': 'update successful',
-            'parties': office
+            'offices': office
             }), 200)
 
 
-    """delete party end point"""
-    @pt_v2.route('/parties/<party_id>', methods=['DELETE'])
-    def delete_a_party(party_id):
-        """This method checks for an existing party then deletes it """
-        party = Party().if_party_exists(party_id)
-        if party:
-            respo =Party().delete_party(party)
+    """delete office end point"""
+    @pt_v2.route('/offices/<office_id>', methods=['DELETE'])
+    def delete_a_office(office_id):
+        """This method checks for an existing office then deletes it """
+        office = OfficeModel().if_office_exists(office_id)
+        if office:
+            office_res =OfficeModel().delete_office(office)
             
             return make_response(jsonify({
                 'status': 200, 
@@ -75,5 +75,5 @@ class OfficeView():
         else:    
             return make_response(jsonify({
                 'status': 404,
-                'message': 'party does not exist'
+                'message': 'office does not exist'
             }), 404)    
