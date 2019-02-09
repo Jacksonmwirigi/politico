@@ -19,7 +19,7 @@ class Party:
         return party
 
     def get_all(self):
-        """get_all retrieves all the registered parties from , in this case, my party_list"""
+        """retrieves all the registered parties from my party_list"""
         return self.party
 
     def get_party_by_id(self, party_id):
