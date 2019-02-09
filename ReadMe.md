@@ -1,5 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f7bd68661f4148e8bb70aa4f1c25c87e)](https://www.codacy.com/app/Jacksonmwirigi/politico?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Jacksonmwirigi/politico&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/Jacksonmwirigi/politico.svg?branch=develop)](https://travis-ci.org/Jacksonmwirigi/politico)[![Coverage Status](https://coveralls.io/repos/github/Jacksonmwirigi/politico/badge.svg?branch=develop)](https://coveralls.io/github/Jacksonmwirigi/politico?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/7dfc59d33df29d7d5cbf/maintainability)](https://codeclimate.com/github/Jacksonmwirigi/politico/maintainability)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f7bd68661f4148e8bb70aa4f1c25c87e)](https://www.codacy.com/app/Jacksonmwirigi/politico?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Jacksonmwirigi/politico&amp;utm_campaign=Badge_Grade)[![Build Status](https://travis-ci.org/Jacksonmwirigi/politico.svg?branch=develop)](https://travis-ci.org/Jacksonmwirigi/politico)[![Maintainability](https://api.codeclimate.com/v1/badges/7dfc59d33df29d7d5cbf/maintainability)](https://codeclimate.com/github/Jacksonmwirigi/politico/maintainability)
 
 **POLITICO API**
 
