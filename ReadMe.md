@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f837c6dabaf94cb59071d0fcda6b45b5)](https://app.codacy.com/app/Jacksonmwirigi/politico?utm_source=github.com&utm_medium=referral&utm_content=Jacksonmwirigi/politico&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/Jacksonmwirigi/politico.svg?branch=develop)](https://travis-ci.org/Jacksonmwirigi/politico)[![Coverage Status](https://coveralls.io/repos/github/Jacksonmwirigi/politico/badge.svg?branch=develop)](https://coveralls.io/github/Jacksonmwirigi/politico?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/7dfc59d33df29d7d5cbf/maintainability)](https://codeclimate.com/github/Jacksonmwirigi/politico/maintainability)
 
 **POLITICO API**
