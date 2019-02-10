@@ -46,10 +46,13 @@ In this project I am creating end points that will allow a user to create, edit,
 **Creating a virtual Environment**
 
 python3 -m venv env;
+
 source env/bin/activate
 
 **Running the Application**
 
 To run the app you add these line on your terminal 
+
 export FLASK_APP =run.py
+
 flask run
