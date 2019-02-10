@@ -4,9 +4,10 @@ from app.api.v1.models.parties_model import Party
 """The below file reisters blueprints for the api"""
 pt_v1 = Blueprint('v1', __name__, url_prefix='/api/v1')
 
-"""This end point allows Admin to create a new political party"""
+
 @pt_v1.route('/parties', methods=['POST'])
 def create__a_party():
+    """This end point allows Admin to create a new political party"""
     data = request.get_json()
     name = data['name']
     hqAddress = data['hqAddress']
@@ -20,9 +21,10 @@ def create__a_party():
     }), 201)
 
 
-"""This is the route for retrieving all political parties."""
+
 @pt_v1.route('/parties', methods=['GET'])
 def get_all_parties():
+    """This is the route for retrieving all political parties."""
     parties = Party().get_all()
     if parties:
         return make_response(jsonify({
@@ -36,9 +38,10 @@ def get_all_parties():
     }), 404)
 
 
-"""Retrieve one political party with specific party id"""
+
 @pt_v1.route('/parties/<int:party_id>', methods=['GET'])
 def get_by_id(party_id):
+    """Retrieve one political party with specific party id"""
     party = Party().get_party_by_id(party_id)
     if party:
         return make_response(jsonify({
@@ -64,7 +67,7 @@ def edit_party_name(party_id):
     }), 200)
 
 
-"""delete party end point"""
+
 @pt_v1.route('/parties/<party_id>', methods=['DELETE'])
 def delete_a_party(party_id):
     """This method checks for an existing party then deletes it """

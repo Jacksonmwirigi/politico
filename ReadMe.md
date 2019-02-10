@@ -2,20 +2,20 @@
 [![Coverage Status](https://coveralls.io/repos/github/Jacksonmwirigi/politico/badge.svg?branch=develop)](https://coveralls.io/github/Jacksonmwirigi/politico?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7dfc59d33df29d7d5cbf/maintainability)](https://codeclimate.com/github/Jacksonmwirigi/politico/maintainability)
 
-**POLITICO API**
+# POLITICO API
 
 In this project I am creating end points that will allow a user to create, edit, delete and retrieve already registered party and as well as viewing and creating goovernment offices from the politico system.
 
 **Below are the end points I have created.**
 
-| END POINT | FUNCTIONALITY | HTTP METHOD |
-|-----------------|----------------|--------------|
-| api/v1/parties | View Parties | GET |
-| api/v1/parties | Create a Party | POST |
-| api/v1/parties | Edit party | PUT |
-| api/v1/parties | Delete Parties| DELETE |
-| api/v1/office | Create office | POST |
-| api/v1/office | view offices | GET |
+|    END POINT   | FUNCTIONALITY  | HTTP METHOD |
+|----------------|----------------|-------------|
+| api/v1/parties | View Parties   |  GET        |
+| api/v1/parties | Create a Party |  POST       |
+| api/v1/parties | Edit party     |  PUT        |
+| api/v1/parties | Delete Parties |  DELETE     |
+| api/v1/office  | Create office  |  POST       |
+| api/v1/office  | view offices   |  GET        |
 
 **TOOLS TO BE USED IN THE CHALLENGE**
 
@@ -43,13 +43,13 @@ In this project I am creating end points that will allow a user to create, edit,
 
     pip install virtualenv
 
-**Creating a virtual Environment**
+## Creating a virtual Environment**
 
 python3 -m venv env;
 
 source env/bin/activate
 
-**Running the Application**
+### Running the Application
 
 To run the app you add these line on your terminal 
 

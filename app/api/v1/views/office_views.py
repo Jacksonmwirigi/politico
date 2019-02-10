@@ -4,9 +4,10 @@ from app.api.v1.models.offices_model import OfficeModel
 
 pt_v2 = Blueprint('v2', __name__, url_prefix='/api/v2')
 
-"""defining office end points for creating a new office """
+
 @pt_v2.route('/offices', methods=['POST'])
 def create_office():
+    """defining office end points for creating a new office """
     data = request.get_json()
     name = data['name']
     candidate_id = data['candidate_id']
