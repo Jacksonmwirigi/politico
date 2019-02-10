@@ -43,14 +43,13 @@ In this project I am creating end points that will allow a user to create, edit,
 
     pip install virtualenv
 
-**Author**
+**Creating a virtual Environment**
 
-Jackson Mwirigi Ithalii
+python3 -m venv env;
+source env/bin/activate
 
-**Contributors**
+**Running the Application**
 
-Harun Gachanga
-
-Abraham Ogol
-
-WIllies Wanjala
+To run the app you add these line on your terminal 
+export FLASK_APP =run.py
+flask run
