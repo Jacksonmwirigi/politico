@@ -1,9 +1,11 @@
+
 body {
+    /* main body for all user dashboards */
     margin: 0;
     
     height: 100%;
 }
-
+/* admin and user dashboard here */
 #dcontainer {
 	display: table;
     width: auto;
@@ -12,12 +14,14 @@ body {
 }
 
 #dsidebar {
+    /* side bar styles used in the dashboards */
 	display: table-cell;
     width: 15%;
 	vertical-align: top;
 }
 
 #dcontent {
+    /* styling dashboard content */
 	display: table-cell;
     width: auto;
     margin-left: 20px;
@@ -26,6 +30,7 @@ body {
 }
 
 .dsh_nav{
+    /* dashboard main nav  */
     width: 160px;
     margin: (2px,10px,1px,10px);
     float: left;
@@ -44,4 +49,13 @@ body {
 .dsh_nav a:hover {
     color: black;
     background-color: brown;
+}
+
+
+.table {
+    /* form tables  */
+    width: 100%;
+     -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    display: block;
 }

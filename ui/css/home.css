@@ -1,30 +1,31 @@
 
 img {
-    width: 60%;
-    height : 230px;
+    width: 40%;
+    height : 150px;
 }
+/* Styling the main body */
 body {
 width: auto;
 }
+/* Styling the main container  */
 main{
- 
-    width: 60%;
-    padding-top: 30px;
+    width: 70%;
+    padding-top: 5px;
     margin-top: 0px;
     text-align: center;
-    margin-right: 20%;
+    margin-right: 10%;
     margin-left: 20%;
-    height: 400px;
-
+    height: auto;
     border-radius: 10px;
 }
+/* styling first level headers within main container  */
 main h1{
     color: black;
     font-size: 24pt;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 
     'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+/* styling section part of the main container */
 section{
 width: 90%;
 height: auto;
@@ -34,6 +35,7 @@ margin-left: 20px;
   article form{
       text-align: center;
   }
+  /* styling admin nav view */
   .admin_nav{
       width: 160px;
       margin-left: 10px;
@@ -43,6 +45,7 @@ margin-left: 20px;
       height: auto;
    
   }
+  /* admin side nav links  */
   .admin_nav a {
     padding: 6px 0px 6px 16px;
     text-decoration: none;
@@ -74,12 +77,29 @@ margin-left: 20px;
   #h{
     color:#fff;
   }
+  /* This is the main footer fixed at the botom */
   #home_footer{
       background-color: #333;
       text-align: center;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       margin-top: 2px;
-      position: relative;
-      margin-bottom: 20px;
       border-radius: 10px;
-      height: 120px;
+      height: auto;
   }
+  /* main view candidates content container-holding form */
+#candidate_row{
+    width: auto;
+    background-color: aqua;
+    height: auto;
+}
+/* columns to holding candidates info  */
+#candidate_column {
+        width: 22%;
+        padding: 5px;
+        margin: 4px;
+        float: left;
+        height: auto;   
+}
