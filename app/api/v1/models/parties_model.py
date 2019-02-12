@@ -14,7 +14,8 @@ class Party:
             'party_id': len(self.party)+1,
             'name': name,
             'hqAddress': hqAddress,
-            'logoUrl': logoUrl}
+            'logoUrl': logoUrl
+            }
         PARTY_LIST.append(party)
         return party
 
@@ -30,17 +31,23 @@ class Party:
                     return party
 
     def edit_party(self, party_id, data):
-        for party in party:
-            """defines arguments for edit party route/ end point"""
-            if party('party_id') == party_id:
-                name = data.get("name")
-            if name:
-                party["name"] = name
-            return party
+        """defines arguments for edit party route/ end point"""
+        for party in PARTY_LIST :
+            if party['party_id'] == party_id :
+                name = data.get('name')
+                logoUrl =data.get('logoUrl')
+                hqAddress =data.get('hqAddress')
+                if name:
+                    party['name'] = name
+                if name:
+                    party['logoUrl'] = logoUrl    
+                if hqAddress:
+                    party['hqAddress'] = hqAddress    
+                return party
 
     def if_party_exists(self, party_id):
         """this method checks if a party exists before delete"""
-        for party in self.party:
+        for party in PARTY_LIST:
             if party['party_id'] == party_id:
                 return party
             else:
@@ -48,9 +55,7 @@ class Party:
 
     def delete_party(self, party_id):
         """defining delete party """
-        for party in self.party:
+        for party in PARTY_LIST:
             if party['party_id'] == party_id:
-                self.party.remove(party)
-            # if party in self.party:
-            #     PARTY_LIST.remove(party)
-            # return "delete successful"
+                PARTY_LIST.remove(party)
+                return None

@@ -1,7 +1,5 @@
 """defining my list as a global variable"""
 OFFICES = []
-
-
 class OfficeModel:
     """This class will handle all the government office operations"""
 
