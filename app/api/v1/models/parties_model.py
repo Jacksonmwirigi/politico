@@ -48,7 +48,9 @@ class Party:
 
     def delete_party(self, party_id):
         """defining delete party """
-        for party in PARTY_LIST:
-            if party in self.party:
-                PARTY_LIST.remove(party)
-            return "delete successful"
+        for party in self.party:
+            if party['party_id'] == party_id:
+                self.party.remove(party)
+            # if party in self.party:
+            #     PARTY_LIST.remove(party)
+            # return "delete successful"
