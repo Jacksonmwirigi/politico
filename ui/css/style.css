@@ -7,18 +7,20 @@ body {
   margin: 0;
   width: auto;
 }
-
+/* main header fo all pages  */
 .header {
-	background-color: #bcc0bd;
-	margin: 5px;
+	background-color: #4286f4;
+	margin-right: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
 	height: auto;	
   text-align: center;
 }
-
+/* main top nav for all pages */
 .topnav {
 	overflow: hidden;
 	position: relative;
-  background-color: #333;
+  /* background-color: #333; */
 }
 .topnav a {
 	display: inline-block;
@@ -28,7 +30,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
 }
-
+/* styling top navs buttons */
 .topnav button{
 	float: right;
 	padding-top: 5px;
@@ -46,12 +48,11 @@ body {
 
 }
 
-
 .topnav a:hover {
-	background-color: brown;
-  color: black;
+	background-color: #fff;
+  color: #000;
 }
-
+/* styling main  side nav for all pages*/
 .sidenav {
   height: auto;
 	width: 160px;
@@ -59,8 +60,7 @@ body {
 	top: 0;
   position:relative;
 	margin-left: 8px;
-	background-color: #333;
-  /* overflow-x: hidden; */
+	background-color: #e1e8f0;
   padding-top: 2px;
 }
 
@@ -71,12 +71,10 @@ body {
   color: #fff;
   display: block;
 }
-
 .sidenav a:hover {
 	color: black;
-	background-color: brown;
+	background-color: #fff;
 }
-
 
 .column {
   float: left;
@@ -84,7 +82,6 @@ body {
 	height: auto;
   padding: 8px;
 }
-
 #row{
 	widows: auto;
 	height: auto;
@@ -95,23 +92,21 @@ body {
   display: table;
   clear: both;
 }
-
-
-
-
 #fieldset1{
-	position: relative;
+	
 	top: 0px;
 	width: auto;	
 	height: auto;
 	margin: 0 0 35px 0;
 	border: 1px solid rgba(13, 24, 26, 0.8);
 }
+/* main container for login and register */
 #main_container{
 	max-width: 500px;
 	margin: auto;
 	height: auto;
 }
+/* main content styling for login, reset password, register and express interest pages. */
 #main_content{
 	position: relative;
 	top: 0px;
@@ -120,6 +115,7 @@ body {
 	margin: 0 0 35px 0;
 	border-radius: 5px;
 }
+/* content inside ui pages */
 #content{
 
 	top: 0px;
@@ -128,14 +124,10 @@ body {
 	margin: 0 0 35px 0;
 	border-radius: 5px
 }
-
-
 #btn {
-
 width: auto;
 border-radius: 20px;
 font-size: 14pt;
-
    }
 
 #wrapper h1{
@@ -146,8 +138,6 @@ font-size: 14pt;
 	text-align: center;
 	padding-bottom: 30px;
 }
-
-
 #wrapper h1:after{
 	content:' ';
 	display:block;
@@ -155,7 +145,7 @@ font-size: 14pt;
 	height:2px;
 	margin-top:10px;
 }
-
+/* styling input fields  */
 input:-moz-placeholder,
 textarea:-moz-placeholder{ 
 
@@ -178,12 +168,8 @@ textarea:-moz-placeholder{
 #fieldS_Set1 {
 	width: auto;
 	position: relative;
-	float:left;
-	
+	float: center;	
 	margin-left: 20px;	
-	margin: auto;
-	
-
   /* text-align: center; */
   font-family: arial;
 	
@@ -191,6 +177,7 @@ textarea:-moz-placeholder{
 #fieldS_Set1 legend{
 	color: darkgreen;
 	font-size: 18px;
+	margin-left: 270px;
 	text-align: center;
 	font-family: arial;
 }
@@ -263,13 +250,10 @@ a {
 .sidemenu a:hover {
   color: #f1f1f1;
 }
-#form{
+/* #form{
 	margin-left: 0px;
 	text-align: center;
-
-}
-
-
+} */
 
 section:after {
   content: "";
@@ -305,11 +289,9 @@ article {
   float: left;
   padding-left: 50px;
   width: 70%;
-
 	margin-left: 20px;
   height: auto; 
 }
-
 @media (max-width: 600px) {
   nav, article {
     width: 100%;
