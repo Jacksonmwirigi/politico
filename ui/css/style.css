@@ -1,0 +1,300 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: auto;
+}
+/* main header fo all pages  */
+.header {
+	background-color: #4286f4;
+	margin-right: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
+	height: auto;	
+  text-align: center;
+}
+/* main top nav for all pages */
+.topnav {
+	overflow: hidden;
+	position: relative;
+  /* background-color: #333; */
+}
+.topnav a {
+	display: inline-block;
+	position: relative;
+	color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* styling top navs buttons */
+.topnav button{
+	float: right;
+	padding-top: 5px;
+	border-radius: 20px;
+	color: #fff;
+	align-content: center;
+	margin-top: 25px;
+	margin-right: 20px;
+}
+
+.topnav h1{
+	float: right;
+	font-size: 14pt;
+	margin-right: 40px;
+
+}
+
+.topnav a:hover {
+	background-color: #fff;
+  color: #000;
+}
+/* styling main  side nav for all pages*/
+.sidenav {
+  height: auto;
+	width: 160px;
+	left: 0;
+	top: 0;
+  position:relative;
+	margin-left: 8px;
+	background-color: #e1e8f0;
+  padding-top: 2px;
+}
+
+.sidenav a {
+  padding: 6px 0px 6px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #fff;
+  display: block;
+}
+.sidenav a:hover {
+	color: black;
+	background-color: #fff;
+}
+
+.column {
+  float: left;
+	width: 40%;
+	height: auto;
+  padding: 8px;
+}
+#row{
+	widows: auto;
+	height: auto;
+	
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#fieldset1{
+	
+	top: 0px;
+	width: auto;	
+	height: auto;
+	margin: 0 0 35px 0;
+	border: 1px solid rgba(13, 24, 26, 0.8);
+}
+/* main container for login and register */
+#main_container{
+	max-width: 500px;
+	margin: auto;
+	height: auto;
+}
+/* main content styling for login, reset password, register and express interest pages. */
+#main_content{
+	position: relative;
+	top: 0px;
+	width: 450px;	
+	padding: 18px 6% 60px 6%;
+	margin: 0 0 35px 0;
+	border-radius: 5px;
+}
+/* content inside ui pages */
+#content{
+
+	top: 0px;
+	width: auto;	
+	padding: 18px 6% 60px 6%;
+	margin: 0 0 35px 0;
+	border-radius: 5px
+}
+#btn {
+width: auto;
+border-radius: 20px;
+font-size: 14pt;
+   }
+
+#wrapper h1{
+	font-size: 48px;
+	padding: 2px 0 10px 0;
+	font-family: Arial,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 30px;
+}
+#wrapper h1:after{
+	content:' ';
+	display:block;
+	width:100%;
+	height:2px;
+	margin-top:10px;
+}
+/* styling input fields  */
+input:-moz-placeholder,
+textarea:-moz-placeholder{ 
+
+	font-style: italic;
+} 
+#wrapper input:not([type="checkbox"] ){
+	width: 92%;
+	margin-top: 4px;
+	padding: 10px 5px 10px 32px;	
+	box-sizing : content-box;
+	border-radius: 3px;
+	transition: all 0.2s linear;
+}
+#wrapper input:not([type="checkbox"]):active,
+#wrapper input:not([type="checkbox"]):focus{
+	border: 1px solid rgba(91, 90, 90, 0.7);
+
+
+} 
+#fieldS_Set1 {
+	width: auto;
+	position: relative;
+	float: center;	
+	margin-left: 20px;	
+  /* text-align: center; */
+  font-family: arial;
+	
+}
+#fieldS_Set1 legend{
+	color: darkgreen;
+	font-size: 18px;
+	margin-left: 270px;
+	text-align: center;
+	font-family: arial;
+}
+
+#btn1 {
+  border: none;
+  outline: 0;
+	padding: 8px;
+	border-radius: 20px;
+  color: white;
+  background-color: #000;
+  cursor: pointer;
+	width: 60px;
+	margin-right: 20px;
+	margin-bottom: 5px;
+	float: right;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+#login{
+	border-width: 2px;
+	border-style: solid;
+	width: auto;
+	padding: 20px;
+	
+}
+#panel{
+	float: center;
+	position: absolute;
+}
+
+#footer{
+	text-align: center;
+ 
+	margin-top: 2px;
+	position: relative;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	height: 120px;
+}
+
+#footer1{
+	color: #000;
+	font-size: 11pt;
+	text-align: center;
+	height: auto;
+	background: #bcc0bd;
+}
+#sidemenu{
+	position: fixed;
+	width: 160px;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidemenu a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+.sidemenu a:hover {
+  color: #f1f1f1;
+}
+/* #form{
+	margin-left: 0px;
+	text-align: center;
+} */
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav {
+  float: left;
+  width: 20%;
+	height: auto; 
+	margin-left: 8px;
+	background-color: #333;
+  padding: 5px;
+}
+
+
+nav ul {
+  list-style-type: none;
+	padding: 0;
+	
+}
+nav a{
+	display: inline-block;
+	position: relative;
+	color: #fff;
+}
+nav a:hover {
+	color: #000;
+	background-color: brown;
+}
+article {
+  float: left;
+  padding-left: 50px;
+  width: 70%;
+	margin-left: 20px;
+  height: auto; 
+}
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}

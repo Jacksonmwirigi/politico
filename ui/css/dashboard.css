@@ -1,0 +1,62 @@
+
+body {
+    /* main body for all user dashboards */
+    margin: 0;
+    
+    height: 100%;
+}
+/* admin and user dashboard here */
+#dcontainer {
+	display: table;
+    width: auto;
+    margin: 20px;
+	height: 100%;
+}
+
+#dsidebar {
+    /* side bar styles used in the dashboards */
+	display: table-cell;
+    width: 15%;
+	vertical-align: top;
+}
+
+#dcontent {
+    /* styling dashboard content */
+	display: table-cell;
+    width: auto;
+    margin-left: 20px;
+    padding-left: 60px;
+	vertical-align: top;
+}
+
+.dsh_nav{
+    /* dashboard main nav  */
+    width: 160px;
+    border-radius: 5px;
+    margin: (2px,10px,1px,10px);
+    float: left;
+    background-color: #e1e8f0;
+    height: auto;
+ 
+}
+.dsh_nav a {
+  padding: 6px 0px 6px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #fff;
+  display: block;
+}
+
+.dsh_nav a:hover {
+    color: black;
+    background-color: #fff;
+}
+
+
+.table {
+    /* form tables  */
+    width: 100%;
+     -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    display: block;
+}

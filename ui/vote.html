@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/voting.css">
+
+    <title>voting process </title>
+</head>
+
+<body>
+    <div class="header ">
+        <h1>Politico</h1>
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="view_parties.html">Political Offices</a>
+            <a href="show_candidates.html">Candidates</a>
+        </div>
+    </div>
+
+    <div class="vote_content">
+
+        <div id="wrapper">
+            <div id="main_content" class="">
+                <form id="tab_form" action="">
+                    <div class="tabview">
+                        <h2> <label for="presidential_candidate"> Presidential Candidate </label></h2>
+
+                        <p>
+                         
+                            <input placeholder="" oninput="this.className = ''" name="presidential_candidate"></p>
+
+
+                    </div>
+                    <div class="tabview">
+                        <h2> <label for="gubernatorial_candidate"> Gubernatorial Candidate </label></h2>
+
+                        <p><input placeholder="..." oninput="this.className = ''" name="gubernatorial_candidate"></p>
+
+
+                    </div>
+                    <div class="tabview">
+                        <h2> <label for="senitorial"> Senitorial Candidate </label>
+                        </h2>
+
+
+
+                        <p><input placeholder="..." oninput="this.className = ''" name="senitorial"></p>
+
+                    </div>
+                    <div class="tabview">
+                        <h2> <label for="women_rep">Women Representative </label>
+                        </h2>
+                        <p>
+                            <input placeholder="..." oninput="this.className = ''" name="women_rep">
+                        </p>
+                    </div>
+                    <div class="tabview">
+                        <h2> <label for="mp_candidate"> MP Candidate </label>
+                        </h2>
+                        <p>
+                            <input placeholder="..." oninput="this.className = ''" name="mp_candidate">
+
+                        </p>
+                    </div>
+                    <div class="tabview">
+                        <h2> <label for="mca_candidate">Member of County Assembly </label>
+                        </h2>
+                        <p>
+                            <input placeholder="..." oninput="this.className = ''" name="mca_candidate">
+                        </p>
+                    </div>
+                    <div style="overflow: auto">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+
+                    </div>
+                    <div style="text-align:center;margin-top:40px;">
+
+                        <span class="steps"></span>
+                        <span class="steps"></span>
+                        <span class="steps"></span>
+                        <span class="steps"></span>
+                        <span class="steps"></span>
+                        <span class="steps"></span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    
+        
+    </div>
+ 
+    <!-- javascrip  external file -->
+    <script src="js/voting.js"></script>
+    <footer id="home_footer">
+            <h2 id="h"> Your trusted online voting</h2>
+            <p id="h">politico app is in town </p>
+        </footer>
+    
+</body>
+
+</html>
