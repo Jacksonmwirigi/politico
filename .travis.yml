@@ -1,0 +1,16 @@
+language: 
+    - python 
+python:
+    - "3.6"
+install:
+    - pip install -r requirements.txt
+    - pip install nose
+    - pip install coverage
+    - pip install coveralls
+before_script:
+    - export FLASK_APP='run.py'
+script:
+    - nosetests --with-coverage --cover-package=app
+after_success:
+    - coveralls
+    - codecov

@@ -1,0 +1,10 @@
+[
+  "tests/v1/test_office_view.py::TestOffices::test_create_office",
+  "tests/v1/test_office_view.py::TestOffices::test_get_all_offices",
+  "tests/v1/test_office_view.py::TestOffices::test_get_specific_office",
+  "tests/v1/test_view_party.py::TestParties::test_create_party",
+  "tests/v1/test_view_party.py::TestParties::test_delete_party",
+  "tests/v1/test_view_party.py::TestParties::test_edit_party",
+  "tests/v1/test_view_party.py::TestParties::test_get_all_parties",
+  "tests/v1/test_view_party.py::TestParties::test_get_specific_party"
+]
