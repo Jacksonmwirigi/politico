@@ -69,7 +69,7 @@ def edit_party_name(party_id):
 
 
 @pt_v1.route('/parties/<party_id>', methods=['DELETE'])
-def delete_a_party(self, party_id):
+def delete_a_party(party_id):
     """This method checks for an existing party then deletes it """
     if Party().delete_party(party_id):
     # party = Party().if_party_exists(party_id)
