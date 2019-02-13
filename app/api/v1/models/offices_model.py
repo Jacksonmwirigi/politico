@@ -1,18 +1,19 @@
 """defining my list as a global variable"""
 OFFICES = []
+
+
 class OfficeModel:
     """This class will handle all the government office operations"""
 
     def __init__(self):
         self.office = OFFICES
 
-    def create_office(self, name, candidate_id, date_created):
+    def create_office(self, office_name, office_type):
         """Defining create office data representation"""
         new_office = {
             'office_id': len(self.office)+1,
-            'name': name,
-            'candidate_id': candidate_id,
-            'date_created': date_created
+            'office_name': office_name,
+            'office_type': office_type
         }
         self.office.append(new_office)
         return new_office

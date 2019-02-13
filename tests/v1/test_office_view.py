@@ -12,14 +12,13 @@ class TestOffices(unittest.TestCase):
         self.app = create_app('testing')
         self.client = self.app.test_client()
         self.dummy_office = {
-            "name": "Office of the President",
-            "candidate_id": "P2018",
-            "date_created": "2/02/2018"
+            "office_name": "Office of the President",
+            "office_type" : "Executive"
         }
         self.dummy_invalid ={
-            "name":"fhh ",
-            "fakecandidate" :"EEG",
-            "fakedate":"12/02/201g"
+            "wrongname":"fhh ",
+            "fakeofficetp" :"EEG"
+         
         }
 
     def post(self, path='/api/v1/offices'):

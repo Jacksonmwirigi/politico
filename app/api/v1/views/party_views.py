@@ -3,12 +3,18 @@ from app.api.v1.models.parties_model import Party, PARTY_LIST
 from app.validation import*
 
 """The below file reisters blueprints for the api"""
+
 party_bluprint = Blueprint('party_blu', __name__, url_prefix='/api/v1')
-
-
+def check_url(url="127:"):
+    try:
+        urlopen(url)
+        return True
+    except URLError:
+        return False  
 @party_bluprint.route('/parties', methods=['POST'])
 def create__a_party():
     """This end point allows Admin to create a new political party"""
+    
     invalid_keys = is_party_key_correct(request)
     if invalid_keys:
         return make_response(jsonify({
@@ -37,7 +43,6 @@ def create__a_party():
             "status": 400,
         }), 400)
 
-
 @party_bluprint.route('/parties', methods=['GET'])
 def get_all_parties():
     """This is the route for retrieving all political parties."""
@@ -52,7 +57,6 @@ def get_all_parties():
         'error': 404,
         'message': 'Nothing to display'
     }), 404)
-
 
 @party_bluprint.route('/parties/<int:party_id>', methods=['GET'])
 def get_by_id(party_id):
@@ -69,7 +73,6 @@ def get_by_id(party_id):
         'message': 'Nothing to display'
     }), 404)
 
-
 @party_bluprint.route('/parties/<int:party_id>', methods=['PATCH'])
 def edit_party_name(party_id):
     """ End point for edit party by sending a PATCH request on postman"""
@@ -85,7 +88,6 @@ def edit_party_name(party_id):
         'status': 404,
         'message': 'Not found'
     }), 404)
-
 
 @party_bluprint.route('/parties/<int:party_id>', methods=['DELETE'])
 def delete_a_party(party_id):

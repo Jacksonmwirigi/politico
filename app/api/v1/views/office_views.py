@@ -18,18 +18,16 @@ def create_office():
         }),400)
     data = request.get_json()
     if data :
-        name = data['name']
-        candidate_id = data['candidate_id']
-        date_created = data['date_created']
-        if check_valid_date(date_created):
-            OfficeModel().create_office(name, candidate_id, date_created)
-            return make_response(jsonify({
-                "msg": "success" ,
-                "status" :201 ,
-                "data" :data
-            }), 201)
-        else :
-            return "Invalid Date" 
+        office_name = data['office_name']
+        office_type = data['office_type']
+       
+        new_off=OfficeModel().create_office(office_name, office_type)
+        return make_response(jsonify({
+            "msg": "success" ,
+            "status" :201 ,
+            "data" :new_off
+        }), 201)
+ 
     else :
         return make_response(jsonify({
             "error" : "No data provided" ,
