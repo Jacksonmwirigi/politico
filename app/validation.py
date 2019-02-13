@@ -91,3 +91,9 @@ def method_not_allowed(error):
         "status": 405,
         "message": "Method Not allowed"
     }), 405)   
+
+# def type_error(error):
+#     return make_response(jsonify({
+#         "status": "Type Error",
+#         "message": "Method Not allowed"
+#     }))  

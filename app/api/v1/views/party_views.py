@@ -24,8 +24,8 @@ def create__a_party():
         
     data = request.get_json()
     if data:
-        name = data['name'],
-        hqAddress = data['hqAddress'],
+        name = data['name']
+        hqAddress = data['hqAddress']
         logoUrl = data['logoUrl']
 
         if valid_url_extension(logoUrl):
@@ -46,12 +46,12 @@ def create__a_party():
 @party_bluprint.route('/parties', methods=['GET'])
 def get_all_parties():
     """This is the route for retrieving all political parties."""
-    parties = Party().get_all()
+    parties   = Party().get_all()
     if parties:
         return make_response(jsonify({
-            'msg': 'success',
             'status': 200,
-            'parties': parties
+            'msg' :"success",
+            'data': parties
         }), 200)
     return make_response(jsonify({
         'error': 404,

@@ -9,3 +9,6 @@ app/v1/__pycache__
 app/api/v1/__pycache__
 app/api/v1/model/__pycache__
 .coverage
+.pytest_cache/
+__pycache__
+app/api/v1/__pycache__
