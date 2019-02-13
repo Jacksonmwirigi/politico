@@ -43,7 +43,7 @@ In this project I am creating end points that will allow a user to create, edit,
 
     pip install virtualenv
 
-## Creating a virtual Environment**
+## Creating a virtual Environment
 
 python3 -m venv env;
 
@@ -51,7 +51,7 @@ source env/bin/activate
 
 ### Running the Application
 
-To run the app you add these line on your terminal 
+To run the app you add these line on your terminal.
 
 export FLASK_APP =run.py
 
