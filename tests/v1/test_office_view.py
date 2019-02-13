@@ -16,11 +16,22 @@ class TestOffices(unittest.TestCase):
             "candidate_id": "P2018",
             "date_created": "2/02/2018"
         }
+        self.dummy_invalid ={
+            "name":"fhh ",
+            "fakecandidate" :"EEG",
+            "fakedate":"12/02/201g"
+        }
 
     def post(self, path='/api/v1/offices'):
         response = self.client.post(
             path="/api/v1/offices", data=json.dumps(self.dummy_office), content_type='application/json')
         return response
+
+    def post_wrong(self, path='/api/v1/offices'):
+        res = self.client.post(path, data=json.dumps(
+            self.dummy_invalid), content_type='application/json')
+        return res   
+ 
 
     def test_create_office(self):
         """ Tests create party end point """
@@ -28,6 +39,12 @@ class TestOffices(unittest.TestCase):
         result = json.loads(respo.data.decode())
         self.assertEqual(result["msg"], "success")
         self.assertTrue(respo.status_code, 201)
+
+    def test_if_office_key_incorrect(self):
+        res = self.post_wrong()  
+        result = json.loads(res.data.decode())
+        self.assertEqual(result["msg"], "Invalid keys used")
+        self.assertTrue(res.status_code, 400)
 
     def test_get_all_offices(self):
         """testing get-all offices end point"""

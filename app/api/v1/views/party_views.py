@@ -9,12 +9,13 @@ party_bluprint = Blueprint('party_blu', __name__, url_prefix='/api/v1')
 @party_bluprint.route('/parties', methods=['POST'])
 def create__a_party():
     """This end point allows Admin to create a new political party"""
-    invalid_keys = is_key_correct(request)
+    invalid_keys = is_party_key_correct(request)
     if invalid_keys:
         return make_response(jsonify({
             "error": 400,
             "msg": "Invalid keys used"
         }))
+        
     data = request.get_json()
     if data:
         name = data['name'],
@@ -30,7 +31,6 @@ def create__a_party():
             }), 201)
         else:
             return "invalid image url"
-
     else:
         return make_response(jsonify({
             "error": "No data provided! Party not created",

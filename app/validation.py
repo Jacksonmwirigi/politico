@@ -27,7 +27,7 @@ def valid_url_extension(url, extension_list=VALID_IMAGE_EXTENSIONS):
                 for e in extension_list])
 
 
-def is_key_correct(request):
+def is_office_key_correct(request):
     """Checks for correct keys in the request """
     my_keys = ['name', 'candidate_id', 'date_created']
     error = []
@@ -36,6 +36,15 @@ def is_key_correct(request):
             error.append(key)
 
     return error
+def is_party_key_correct(request):
+    """Checks for correct keys in the request """
+    my_keys = ['name', 'hqAddress', 'logoUrl']
+    error = []
+    for key in my_keys:
+        if not key in request.json:
+            error.append(key)
+
+    return error    
 
 
 def check_valid_date(date_text):

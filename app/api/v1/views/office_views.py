@@ -10,12 +10,12 @@ office_bluprint = Blueprint('office_blu', __name__, url_prefix='/api/v1')
 def create_office():
     """defining office end points for creating a new office """
 
-    invalid_keys = is_key_correct(request)
-    if invalid_keys:
+    key_error = is_office_key_correct(request)
+    if key_error:
         return make_response(jsonify({
             "error": 400,
             "msg" : "Invalid keys used"
-        }))
+        }),400)
     data = request.get_json()
     if data :
         name = data['name']
@@ -25,7 +25,7 @@ def create_office():
             OfficeModel().create_office(name, candidate_id, date_created)
             return make_response(jsonify({
                 "msg": "success" ,
-                "status" :200 ,
+                "status" :201 ,
                 "data" :data
             }), 201)
         else :
