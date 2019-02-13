@@ -15,15 +15,6 @@ VALID_IMAGE_EXTENSIONS = [
 ]
 
 
-def check_no_digits(word):
-    """checks for valid string """
-    """Checks for characters , name should not have digits """
-    if word.isdigit:
-        return "Only String expected "
-    else:
-        pass
-
-
 def valid_url_extension(url, extension_list=VALID_IMAGE_EXTENSIONS):
     """Validates logo url for valid image extensions"""
     return any([url.endswith(e)
@@ -52,18 +43,7 @@ def is_party_key_correct(request):
     return error
 
 
-def check_valid_date(date_text):
-    """Validating date input """
-    #user_input = input('Enter the date in mm/dd/yyyy format: ')
-    try:
-        if datetime.strptime(date_text, '%m/%d/%Y'):
-            return date_text
-
-    except ValueError:
-        return print('The date {} is invalid'.format(date_text))
-
-
-def page_not_found( error):
+def page_not_found(error):
     return make_response(jsonify({
         "status": "not found",
         "message": "url not found",
@@ -86,14 +66,10 @@ def bad_request(error):
         "message": "url not found",
         "error": 400
     }), 400)
+
+
 def method_not_allowed(error):
     return make_response(jsonify({
         "status": 405,
         "message": "Method Not allowed"
-    }), 405)   
-
-# def type_error(error):
-#     return make_response(jsonify({
-#         "status": "Type Error",
-#         "message": "Method Not allowed"
-#     }))  
+    }), 405)
