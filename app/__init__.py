@@ -16,5 +16,6 @@ def create_app(config_name):
     app.register_error_handler(500, internal_server_error)
     app.register_error_handler(404, page_not_found)
     app.register_error_handler(405, method_not_allowed)
+    # app.register_error_handler('Type error', type_error)
 
     return app
