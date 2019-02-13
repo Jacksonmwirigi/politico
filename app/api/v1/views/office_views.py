@@ -1,23 +1,41 @@
 from flask import Flask, make_response, request, jsonify
 from flask import Blueprint
 from app.api.v1.models.offices_model import OfficeModel
+from app.validation import*
 
-pt_v2 = Blueprint('v2', __name__, url_prefix='/api/v2')
+"""Defining  Office blueprints """
+office_bluprint = Blueprint('office_blu', __name__, url_prefix='/api/v1')
 
-
-@pt_v2.route('/offices', methods=['POST'])
+@office_bluprint.route('/offices', methods=['POST'])
 def create_office():
     """defining office end points for creating a new office """
-    data = request.get_json()
-    name = data['name']
-    candidate_id = data['candidate_id']
-    date_created = data['date_created']
-    OfficeModel().create_office(name, candidate_id, date_created)
-    return make_response(jsonify({
-        "msg": "success"
-    }), 201)
 
-@pt_v2.route('/offices/<int:office_id>', methods=['GET'])
+    key_error = is_office_key_correct(request)
+    if key_error:
+        return make_response(jsonify({
+            "error": 400,
+            "msg" : "Invalid keys used"
+        }),400)
+    data = request.get_json()
+    if data :
+        office_name = data['office_name']
+        office_type = data['office_type']
+       
+        new_off=OfficeModel().create_office(office_name, office_type)
+        return make_response(jsonify({
+            "msg": "success" ,
+            "status" :201 ,
+            "data" :new_off
+        }), 201)
+ 
+    else :
+        return make_response(jsonify({
+            "error" : "No data provided" ,
+            "status" :404
+
+    }),404)    
+
+@office_bluprint.route('/offices/<int:office_id>', methods=['GET'])
 def get_by_id(office_id):
     """This is the route allows user to retrieve one 
     specific government opffice by specifying the office id"""
@@ -31,9 +49,8 @@ def get_by_id(office_id):
         'msg': 'NOt found'
     }))
 
-
-@pt_v2.route('/offices', methods=['GET'])
-def get_all_offices(self):
+@office_bluprint.route('/offices', methods=['GET'])
+def get_all_offices():
     """This is the route for retrieving all government ofices."""
     offices = OfficeModel().get_all()
     if offices:
@@ -45,6 +62,3 @@ def get_all_offices(self):
         'msg': 'success',
         'offices': offices
     }))
-
-
-
