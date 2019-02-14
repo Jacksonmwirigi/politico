@@ -21,7 +21,7 @@ class Party:
 
     def get_all(self):
         """retrieves all the registered parties from my party_list"""
-        return self.party
+        return PARTY_LIST
 
     def get_party_by_id(self, party_id):
         if self.party:
