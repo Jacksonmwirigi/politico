@@ -51,7 +51,7 @@ source env/bin/activate
 
 ### Running the Application
 
-To run the app you add these line on your terminal 
+To run the app you add these line on your terminal.
 
 export FLASK_APP =run.py
 

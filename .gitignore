@@ -3,12 +3,12 @@ env/
 .env
 tests/__pycache__
 .pytest_cache/
-__pycache__
+.__pycache__
+.pyc 
+.coverage
 app/__pycache__
 app/v1/__pycache__
 app/api/v1/__pycache__
 app/api/v1/model/__pycache__
-.coverage
-.pytest_cache/
+tests/v1/__pycache__/  
 __pycache__
-app/api/v1/__pycache__

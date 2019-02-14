@@ -1,3 +1,4 @@
+
 import psycopg2
 import os
 
@@ -100,4 +101,6 @@ def tables():
 	queries = [candidates, users, votes, parties, offices]
 	return queries
 	
+
+
 
