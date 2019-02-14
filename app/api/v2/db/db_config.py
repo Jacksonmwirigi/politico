@@ -99,4 +99,5 @@ def tables():
 
 	queries = [candidates, users, votes, parties, offices]
 	return queries
+	
 
