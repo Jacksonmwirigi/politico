@@ -43,9 +43,12 @@ def destroydb():
 	cur = con.cursor()
 
 	users = """ DROP TABLE IF EXISTS users CASCADE;  """
-	candidates = """ DROP TABLE IF EXISTS users CASCADE;  """
+	candidates = """ DROP TABLE IF EXISTS candidates CASCADE;"""
+	votes = """ DROP TABLE IF EXISTS votes CASCADE;  """
+	parties = """ DROP TABLE IF EXISTS parties CASCADE;  """
+	offices = """ DROP TABLE IF EXISTS offices CASCADE;  """
 
-	queries = [users]
+	queries = [candidates, users, votes, parties, offices]
 
 	for query in queries:
 		cur.execute(query)
@@ -61,14 +64,39 @@ def tables():
     email character varying(50),
     phone_number Integer varying(50) NOT NULL,
     passportUrl character varying(50) NOT NULL,
-    IsAdmin Boolean varying(500) NOT NULL );"""
+    isAdmin BOOLEAN varying(500) DEFAULT FALSE, 
+	isCandidate BOOLEAN DEFAULT FALSE);"""
+	
 
 	candidates = """CREATE TABLE IF NOT EXISTS incidents (
-    can_id serial PRIMARY KEY NOT NULL,
-    candidate_name character varying(20) NOT NULL,
-    office character varying(20) NOT NULL,
-    party character varying(50)
+    candidate_id serial PRIMARY KEY NOT NULL,
+    user_id integer REFERENCES users(user_id),
+    office_id integer REFERENCES office(office_id),
+    party_Id integer REFERENCES party(party_id),
+	date_created datestamp DEFAULT Now()
     ); """
 
-	queries = [candidates, users]
+	parties = """ CREATE TABLE IF NOT EXISTS party (
+    party_id serial PRIMARY KEY NOT NULL,
+    party_name character varying(50) NOT NULL,
+    HQ_address character varying(50) NOT NULL,
+    logo_Url character varying(50) NOT NULL,
+    );"""
+	
+
+	offices = """CREATE TABLE IF NOT EXISTS office (
+    office_id serial PRIMARY KEY NOT NULL,
+    office_name character varying(20) NOT NULL,
+    office_type character varying(20) NOT NULL
+    ); """
+
+	votes = """CREATE TABLE IF NOT EXISTS vote (
+    vote_id serial PRIMARY KEY NOT NULL,
+    date_created timestamp varying(20) NOT NULL,
+	candidate_id integer REFERENCES candidate (candidate_id),
+    office_id integer REFERENCES office(office_id) 
+    ); """
+
+	queries = [candidates, users, votes, parties, offices]
 	return queries
+
