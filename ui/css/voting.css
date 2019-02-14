@@ -1,0 +1,56 @@
+
+.vote_content{
+    width: 500px;
+    margin-left: 20%;
+    padding: 60px;
+    align-content: center;
+    margin-right: 90px;
+}
+
+button{
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    border-radius: 20px;
+    width: 80px;
+}
+.tabview{
+    display: none;
+}
+input.invalid {
+    background-color: #ffdddd;
+  }
+
+  .steps {
+
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+
+  }
+  /* sets step to active state and color changes */
+  .steps active {
+    opacity: 1;
+  }
+  /* marks end of steps ---inactive state */
+  .steps finish {
+    background-color: #4CAF50;
+  }
+
+  #floating_btn{
+      overflow: auto;
+      /* float: right; */
+     
+      
+  }
+  /* #floating_btn  nPrv_btn{
+     
+  } */
+
+
+
+
