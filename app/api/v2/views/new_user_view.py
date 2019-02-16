@@ -14,12 +14,25 @@ def register():
     phone_number=data['phone_number']
     is_admin=data['is_admin']
    
-    new_user = UserModeln(first_name,second_name,other_name, passport_url,email_address,phone_number,is_admin).register_user()
+    new_user=UserModeln(first_name,second_name,other_name, passport_url,email_address,phone_number,is_admin).register_user()
     # result =UserModeln.register_user(new_user)
 
     return make_response(jsonify({
         'status': 201,
         'message': 'Successfully registered.',
-        'data': "new_user"
+        'data': new_user
     }),201)
+
+    @register_bluprint.route('/signup', methods=['GET'])
+    def view_users():
+        users= UserModeln().get_all_users()
+
+        return make_response(jsonify({
+            'status': 200,
+            'message': 'Successfully registered.',
+            'data': users
+
+        }),200)
+        
+
 

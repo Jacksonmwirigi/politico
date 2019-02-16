@@ -1,6 +1,8 @@
-from app.db.new_db import Database
+from app.api.v2.db.db_config import init_db
 import psycopg2
-
+from app.api.v2.models.base_model import BaseModel
+# url = "postgresql://postgres:postgres@localhost/newpolitico"
+# con = psycopg2.connect(url)
 class UserModeln():
     """creating a user object."""
     def __init__(self,first_name, second_name,other_name,passport_url, email_address ,phone_number, is_admin):
@@ -15,22 +17,29 @@ class UserModeln():
 
     def register_user(self):
         """registers  a new user in the database -politicodb"""
+        con = init_db()
+        cur = con.cursor()
 
-        # reg_query = """INSERT INTO users (first_name, second_name,other_name, passport_url, email_address,phone_number, is_admin) VALUES(%(first_name)%,%(second_name)%,%(other_name)%, %(passport_url)% , %(email_address)%,%(phone_number)%,%(is_admin)%);"""
+ 
+        query = """ INSERT INTO users (first_name, second_name,other_name,passport_url,
+        email_address,phone_number, is_admin) 
+        VALUES(%s,%s, %s,%s , %s, %s, %s)"""
 
-        query = """ INSERT INTO users (first_name, second_name,other_name, passport_url, email_address,phone_number, is_admin) VALUES \
-                            ( %(first_name)s, %(second_name)s, %(other_name)s , %(passport_url)s , %(email_address)s, %(phone_number)s, %(is_admin)s) RETURNING user_id """
-        con = Database().connection
-        # cur = con.cursor()
-        if con:
-            cur =con.cursor()
-            cur.execute(query)
-            con.commit
-            cur.close
-        return  "new user created "   
+           
 
+        new_entry = (self.first_name,self.second_name, self.other_name, 
+        self.passport_url, self.email_address, self.phone_number, self.is_admin)
+                       
+        cur.execute(query, new_entry)
+        con.commit()
+        cur.close()
+        return new_entry
+    def get_all_users(self):
+        con = init_db()
+        cur = con.cursor()
+        get_query= """ SELECT * FROM users ;""" 
+        cur.execute(get_query)
+        response= cur.fetchall
+        return response
 
-
-        
-
-
+    
