@@ -3,14 +3,6 @@ import psycopg2
 import os
 # url for databse connection
 url = "postgresql://postgres:postgres@localhost/newpolitico"
-# DATABASE_URL="postgresql://jack:postgres@localhost/users"
-
-# return connection
-# def connection(url):
-# 	con = psycopg2.connect(url)
-# 	return con
-
-
 # return connection and creates tables
 def init_db():
 	con = psycopg2.connect(url)
@@ -63,7 +55,8 @@ def tables():
     passport_url VARCHAR NOT NULL,
     email_address VARCHAR NOT NULL,
     phone_number Integer  NOT NULL,
-    is_admin BOOLEAN  DEFAULT FALSE
+    is_admin BOOLEAN  DEFAULT FALSE,
+	password VARCHAR NOT NULL
 	);"""
 	
 
