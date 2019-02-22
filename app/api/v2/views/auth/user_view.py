@@ -9,7 +9,7 @@ login_bluprint=Blueprint("login",__name__, url_prefix= '/api/v2')
 
 @register_bluprint.route('/signup', methods=['POST'])
 def register():
-    """Registers new user entry into the database. """   
+    """Registers new user entry into the database."""   
     key_error= is_register_key_correct(request)
     if key_error:
         return make_response(jsonify({
@@ -25,9 +25,22 @@ def register():
     email_address=data['email_address']
     phone_number=data['phone_number']
     is_admin=data['is_admin']
+    password=data['password']
+
+    if isValidEmail(email_address)==False:
+        return "Invalid email"
      
+ 
+        
     new_user=UserModel(first_name,second_name,other_name,
-         passport_url,email_address,phone_number,is_admin).register_user()
+                passport_url,email_address,phone_number,is_admin,password).register_user()
+    
+    if BaseModel().check_if_exists('users','email_address',email_address)==True :
+        return make_response(jsonify({
+            "error" :'This Email address Already exists',
+            "status":409
+        })) 
+
     if new_user:
         token =BaseModel().encode_auth_token( email_address)
     else :
@@ -36,14 +49,12 @@ def register():
             "msg" : "No data provided"
     }))   
 
-
     return make_response(jsonify({
         'status': 201,
         'message': 'Successfully registered.',
         'data': new_user,
         'token' : token.decode()
     }),201)
-
 
 @register_bluprint.route('/signup', methods=['GET'])
 def view_users():
@@ -54,10 +65,11 @@ def view_users():
             'status': 200,
             'message': 'Successful',
             'data': users
+            
         }),200)
     return make_response(jsonify({
         'status': 404,
-        'message': 'Sorry No registred user yet'
+        'message': 'User not registred'
 
     }),404)    
 
@@ -72,11 +84,11 @@ def user_signIn():
         token =BaseModel().encode_auth_token(email_address)
         return make_response(jsonify({
             "status": 200,
-            "msg": "signed In successfully",
+            "msg": "Sign In successful",
             "data" : user,
             "token": token.decode()
         }),200)
     return make_response(jsonify({
         "error" :404,
-        "msg" : "This email provided is not registered"
+        "msg" : "Email not registered"
     }),404)   

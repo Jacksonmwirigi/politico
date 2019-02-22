@@ -7,7 +7,7 @@ cur = con.cursor()
 class UserModel():
     """creating a user object."""
     def __init__(self,first_name, second_name,other_name,passport_url, 
-    email_address ,phone_number, is_admin):
+    email_address ,phone_number, is_admin,password):
         """creating user class instance variables """
         self.first_name =first_name
         self.second_name =second_name
@@ -16,6 +16,7 @@ class UserModel():
         self.email_address = email_address
         self.phone_number =phone_number
         self.is_admin =is_admin
+        self.password=password
         
        
 
@@ -25,14 +26,16 @@ class UserModel():
         cur = con.cursor()
  
         query = """ INSERT INTO users (first_name, second_name,other_name,passport_url,
-        email_address,phone_number, is_admin) 
-        VALUES(%s,%s, %s,%s , %s, %s, %s)"""
+        email_address,phone_number, is_admin,password) 
+        VALUES(%s,%s, %s,%s , %s, %s, %s,%s)"""
+
+    
+            
          
         new_entry = (self.first_name,self.second_name, self.other_name, 
-        self.passport_url, self.email_address, self.phone_number, self.is_admin)
-                       
-        cur.execute(query, new_entry)
+        self.passport_url, self.email_address, self.phone_number, self.is_admin, self.password)
         
+        cur.execute(query, new_entry)
         con.commit()
         cur.close()
         return new_entry
