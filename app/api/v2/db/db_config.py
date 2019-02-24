@@ -2,18 +2,19 @@
 import psycopg2
 import os
 # url for databse connection
-url = "postgresql://postgres:postgres@localhost/newpolitico"
+uri = "postgresql://postgres:postgres@localhost/politicodb"
+
 # return connection and creates tables
 def init_db():
-	con = psycopg2.connect(url)
+	con = psycopg2.connect(uri)
 	# con = connection(uri)
 	cur = con.cursor()
 	queries = tables()
 
 	for query in queries:
 		cur.execute(query)
-	con.commit()
-	return con
+		con.commit()
+		return con
 
 
 #test database connection
@@ -29,21 +30,21 @@ def init_db():
 # 	return con
 
 # Deletes all tables after tests have been run
-def destroydb():
-	con = psycopg2.connect(url)
-	cur = con.cursor()
+# def destroydb():
+# 	con = psycopg2.connect(url)
+# 	cur = con.cursor()
 
-	users = """ DROP TABLE IF EXISTS users CASCADE;  """
-	candidates = """ DROP TABLE IF EXISTS candidates CASCADE;"""
-	votes = """ DROP TABLE IF EXISTS votes CASCADE;  """
-	parties = """ DROP TABLE IF EXISTS parties CASCADE;  """
-	offices = """ DROP TABLE IF EXISTS offices CASCADE;  """
+# 	users = """ DROP TABLE IF EXISTS users CASCADE;  """
+# 	candidates = """ DROP TABLE IF EXISTS candidates CASCADE;"""
+# 	# votes = """ DROP TABLE IF EXISTS votes CASCADE;  """
+# 	parties = """ DROP TABLE IF EXISTS parties CASCADE;  """
+# 	offices = """ DROP TABLE IF EXISTS offices CASCADE;  """
 
-	queries = [candidates, users, votes, parties, offices]
+# 	queries = [candidates, users, parties, offices]
 
-	for query in queries:
-		cur.execute(query)
-	con.commit()
+# 	for query in queries:
+# 		cur.execute(query)
+# 	con.commit()
 
 # contain all table creation queries
 def tables():
@@ -59,35 +60,37 @@ def tables():
 	password VARCHAR NOT NULL
 	);"""
 	
-
-	# candidates = """CREATE TABLE IF NOT EXISTS candidates (
-    # candidate_id serial PRIMARY KEY NOT NULL,
-    # user_id integer REFERENCES users(user_id),
-    # office_id integer REFERENCES office(office_id),
-    # party_Id integer REFERENCES party(party_id),
-	# date_created datestamp DEFAULT Now()
-    # ); """
-
 	parties = """ CREATE TABLE IF NOT EXISTS parties (
     party_id serial PRIMARY KEY NOT NULL,
     party_name character varying(50) NOT NULL,
-    HQ_address character varying(50) NOT NULL,
-    logo_Url character varying(50) NOT NULL,
+    hq_address character varying(50) NOT NULL,
+    logo_url character varying(50) NOT NULL,
     );"""
 	
+	offices = """CREATE TABLE IF NOT EXISTS office (
+    office_id serial PRIMARY KEY NOT NULL,
+    office_name character varying(20) NOT NULL,
+    office_type character varying(20) NOT NULL
+    ); """
 
-	# offices = """CREATE TABLE IF NOT EXISTS offices (
-    # office_id serial PRIMARY KEY NOT NULL,
-    # office_name character varying(20) NOT NULL,
-    # office_type character varying(20) NOT NULL
-    # ); """
+	candidates = """CREATE TABLE IF NOT EXISTS candidates (
+    candidate_id serial PRIMARY KEY NOT NULL,
+    user_id integer REFERENCES users(user_id),
+    office_id integer REFERENCES office(office_id),
+    party_Id integer REFERENCES party(party_id),
+	date_created timestamp NOT NULL DEFAULT Now()
+    ); """
 
-	# votes = """CREATE TABLE IF NOT EXISTS votes (
+	# votes = """CREATE TABLE IF NOT EXISTS vote (
     # vote_id serial PRIMARY KEY NOT NULL,
-    # date_created timestamp varying(20) NOT NULL,
+    # date_created timestamp ,
 	# candidate_id integer REFERENCES candidate (candidate_id),
     # office_id integer REFERENCES office(office_id) 
     # ); """
 
-	queries = [ users]
+	queries = [users, parties, offices,candidates]
 	return queries
+	
+
+
+
