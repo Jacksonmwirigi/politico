@@ -29,18 +29,15 @@ def register():
 
     if isValidEmail(email_address)==False:
         return "Invalid email"
-     
- 
-        
-    new_user=UserModel(first_name,second_name,other_name,
-                passport_url,email_address,phone_number,is_admin,password).register_user()
-    
-    if BaseModel().check_if_exists('users','email_address',email_address)==True :
+    if BaseModel().check_if_exists('users','email_address',email_address):
         return make_response(jsonify({
             "error" :'This Email address Already exists',
             "status":409
-        })) 
-
+        }))     
+             
+    new_user=UserModel(first_name,second_name,other_name,
+                passport_url,email_address,phone_number,is_admin,password).register_user()
+    
     if new_user:
         token =BaseModel().encode_auth_token( email_address)
     else :
@@ -92,3 +89,33 @@ def user_signIn():
         "error" :404,
         "msg" : "Email not registered"
     }),404)   
+@register_bluprint.route("/signup",methods=['PUT'])    
+def update_user_data():
+    data= request.get_json()
+    first_name=data['first_name']
+    second_name=data['second_name']
+    phone_number=data['phone_number']
+    email_address=data ['email_address']
+        
+    new_rec=UserModel.update_user_data(first_name,second_name,phone_number,email_address)
+    if new_rec :
+        return make_response(jsonify({
+            "status" :200,
+            "msg" : "update successful",
+            "data" :new_rec
+        }),200) 
+    else:
+        return make_response(jsonify({
+            "error":404,
+            "msg":"no such email "
+        }))   
+@register_bluprint.route('/signup', methods=['DELETE'])        
+def delete_user_byemail():
+    data=request.get_json()
+    email_address = data['email_address']
+    new=UserModel.delete_user(email_address)
+    return make_response(jsonify({
+        "data":new,
+        "status":200,
+        "msg":"delete success"
+    }))

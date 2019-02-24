@@ -16,9 +16,7 @@ class UserModel():
         self.email_address = email_address
         self.phone_number =phone_number
         self.is_admin =is_admin
-        self.password=password
-        
-       
+        self.password=password     
 
     def register_user(self):
         """registers  a new user in the database -politicodb"""
@@ -27,11 +25,8 @@ class UserModel():
  
         query = """ INSERT INTO users (first_name, second_name,other_name,passport_url,
         email_address,phone_number, is_admin,password) 
-        VALUES(%s,%s, %s,%s , %s, %s, %s,%s)"""
-
-    
-            
-         
+        VALUES(%s,%s, %s,%s , %s, %s, %s,%s)"""  
+                 
         new_entry = (self.first_name,self.second_name, self.other_name, 
         self.passport_url, self.email_address, self.phone_number, self.is_admin, self.password)
         
@@ -39,7 +34,7 @@ class UserModel():
         con.commit()
         cur.close()
         return new_entry
-
+            
     @classmethod  
     def get_all_users(cls):
         """defines method for viewing all registered users."""
@@ -64,17 +59,27 @@ class UserModel():
         cur.execute("""SELECT * FROM users WHERE email_address='%s'"""%(email_address))  
         user =cur.fetchone()
         con.commit()
-        # cur.close()
         return user
-
-
-       
-
+    @classmethod    
+    def delete_user(cls,email):
+        delete_query= "DELETE FROM users WHERE email_address =%s RETURNING *;"
+        cur.execute(delete_query,(email,))
+        new=cur.fetchall()
+        con.commit()
+        return new
+    @classmethod    
+    def update_user_data(cls, fname,sname,phone,email,):
+        if BaseModel().check_if_exists('users','email_address',email):
+            update_query= "UPDATE users set first_name =%s,second_name=%s,phone_number\
+                 =%s WHERE email_address=%s RETURNING *;"
+            cur.execute(update_query,(fname,sname,phone, email))
+            con.commit()
+            newname=cur.fetchall()
+            return newname
+        else:
+            return None
 
         
 
 
-
-
-
-    
+       

@@ -7,16 +7,14 @@ class BaseModel():
     """THis is the base model class """
     def check_if_exists(self, table_name,field_name, value):
         """Checks for an existing record in the db"""
-
         con = init_db()
         cur = con.cursor()
         query = "SELECT * FROM {} WHERE {} ='{}';".format(table_name, field_name,value)
         cur.execute(query)
-        response= cur.fetchone()
-        if response :
-            return True 
-        else :
-            return False
+        con.commit()
+        response =cur.fetchall()
+        if len(response)>0:
+            return response 
 
     def encode_auth_token(self, email_address):
         """ Generates the Auth Token :return: string"""
@@ -33,7 +31,6 @@ class BaseModel():
             )
         except Exception as e:
             return e
-
 
     @staticmethod
     def decode_auth_token(auth_token):
