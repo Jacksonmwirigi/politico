@@ -3,6 +3,7 @@ import psycopg2
 import os
 # url for databse connection
 uri = "postgresql://postgres:postgres@localhost/politicodb"
+test_url="postgresql://postgres:postgres@localhost/politicotest"
 
 # return connection and creates tables
 def init_db():
@@ -18,33 +19,32 @@ def init_db():
 
 
 #test database connection
-# def init_test_db(test_url):
+def init_test_db(test_url):
    
-# 	con = connection(test_uri)
-# 	cur = con.cursor()
-# 	queries = tables()
+	con = connection(test_uri)
+	cur = con.cursor()
+	queries = tables()
 
-# 	for query in queries:
-# 		cur.execute(query)
-# 	con.commit()
-# 	return con
+	for query in queries:
+		cur.execute(query)
+	con.commit()
+	return con
 
 # Deletes all tables after tests have been run
-# def destroydb():
-# 	con = psycopg2.connect(url)
-# 	cur = con.cursor()
+def destroydb():
+	con = psycopg2.connect(url)
+	cur = con.cursor()
 
-# 	users = """ DROP TABLE IF EXISTS users CASCADE;  """
-# 	candidates = """ DROP TABLE IF EXISTS candidates CASCADE;"""
-# 	# votes = """ DROP TABLE IF EXISTS votes CASCADE;  """
-# 	parties = """ DROP TABLE IF EXISTS parties CASCADE;  """
-# 	offices = """ DROP TABLE IF EXISTS offices CASCADE;  """
+	users = """ DROP TABLE IF EXISTS users CASCADE;  """
+	candidates = """ DROP TABLE IF EXISTS candidates CASCADE;"""
+	parties = """ DROP TABLE IF EXISTS parties CASCADE;  """
+	offices = """ DROP TABLE IF EXISTS offices CASCADE;  """
 
-# 	queries = [candidates, users, parties, offices]
+	queries = [candidates, users, parties, offices]
 
-# 	for query in queries:
-# 		cur.execute(query)
-# 	con.commit()
+	for query in queries:
+		cur.execute(query)
+	con.commit()
 
 # contain all table creation queries
 def tables():
@@ -80,13 +80,6 @@ def tables():
     party_Id integer REFERENCES party(party_id),
 	date_created timestamp NOT NULL DEFAULT Now()
     ); """
-
-	# votes = """CREATE TABLE IF NOT EXISTS vote (
-    # vote_id serial PRIMARY KEY NOT NULL,
-    # date_created timestamp ,
-	# candidate_id integer REFERENCES candidate (candidate_id),
-    # office_id integer REFERENCES office(office_id) 
-    # ); """
 
 	queries = [users, parties, offices,candidates]
 	return queries
