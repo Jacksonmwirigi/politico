@@ -26,9 +26,18 @@ class Parties():
 
     @classmethod
     def view_all_parties(cls):
+        """DEfines method to diplay all regitered parties"""
         vw_qry= "select * from parties;"
         cur.execute(vw_qry)
         con.commit()
         entries=cur.fetchall()
         return entries
-        
+
+    @classmethod
+    def get_one_party(cls,party_id):
+        """method for getting one specific party by the party_id  """
+        cur.execute("""SELECT * FROM parties WHERE party_id='%s';"""%(party_id))  
+        single_party =cur.fetchone()
+        con.commit()
+        return single_party
+                  
