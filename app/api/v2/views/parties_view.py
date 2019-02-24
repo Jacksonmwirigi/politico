@@ -27,7 +27,7 @@ def post_party():
         "msg" :"success"
     }))
 
-@party_bluprint.route('parties',methods=['GET'])
+@party_bluprint.route('/parties',methods=['GET'])
 def view_parties():
     parties=Parties.view_all_parties()
     return make_response(jsonify({
@@ -36,3 +36,17 @@ def view_parties():
         "data" : parties
     }))
 
+@party_bluprint.route('/parties/<int:party_id>',methods=['GET'])
+def view_one_party(party_id):
+    """retrieves one specific party by the party_id"""
+    if BaseModel().check_if_exists('parties','party_id',party_id):
+        party=Parties.get_one_party(party_id)
+        return make_response(jsonify({
+            "status":200,
+            "msg" :"success",
+            "data": party
+        }))
+    return  make_response(jsonify({
+        "error":404,
+        "msg":"No such party found"
+    }))
