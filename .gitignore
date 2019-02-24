@@ -12,3 +12,4 @@ app/api/v1/__pycache__
 app/api/v1/model/__pycache__
 tests/v1/__pycache__/  
 __pycache__
+inary/
